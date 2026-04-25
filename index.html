@@ -429,7 +429,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
       <div class="modal-perk"><i class="fa-solid fa-check"></i> Account manager</div>
       <div class="modal-perk"><i class="fa-solid fa-check"></i> Accès Agent 4 beta</div>
     </div>
-    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
+    <form id="contact-form" action="https://formspree.io/f/xojyblwv" method="POST" onsubmit="handleSubmit(event)">
       <input type="hidden" name="_subject" value="Demande Cabinet+ — PraticIA"/>
       <div class="form-grid">
         <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" required placeholder="Marie"/></div>
@@ -1072,25 +1072,20 @@ function handleSubmit(e){
   e.preventDefault();
   const form=document.getElementById('contact-form');
   const data=new FormData(form);
-  const prenom=data.get('prenom')||'';
-  const nom=data.get('nom')||'';
-  const email=data.get('email')||'';
-  const specialite=data.get('specialite')||'';
-  const praticiens=data.get('praticiens')||'';
-  const message=data.get('message')||'';
-  const subject=encodeURIComponent('Demande Cabinet+ — '+prenom+' '+nom+' | PraticIA');
-  const body=encodeURIComponent(
-    'Nouvelle demande Cabinet+ depuis le site PraticIA\n\n'+
-    'Prénom : '+prenom+'\n'+
-    'Nom : '+nom+'\n'+
-    'Email : '+email+'\n'+
-    'Spécialité : '+specialite+'\n'+
-    'Nombre de praticiens : '+praticiens+'\n'+
-    'Message : '+message
-  );
-  window.open('mailto:pratic.iaoff@gmail.com?subject='+subject+'&body='+body,'_blank');
-  form.style.display='none';
-  document.getElementById('form-success').style.display='block';
+  fetch('https://formspree.io/f/xojyblwv',{
+    method:'POST',
+    body:data,
+    headers:{'Accept':'application/json'}
+  }).then(r=>{
+    if(r.ok){
+      form.style.display='none';
+      document.getElementById('form-success').style.display='block';
+    } else {
+      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter à pratic.iaoff@gmail.com');
+    }
+  }).catch(()=>{
+    alert('Une erreur est survenue. Veuillez réessayer ou nous contacter à pratic.iaoff@gmail.com');
+  });
 }
 
 // ── Payment confirmation modal ───────────────────────────────
