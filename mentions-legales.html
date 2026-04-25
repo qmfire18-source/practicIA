@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Mentions légales — PraticIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06071A;--bg2:#0B0D2A;
+  --blue:#4361EE;--purple:#7209B7;--cyan:#00C9A7;--pink:#F72585;
+  --white:#fff;--gray:#A0A8C0;
+  --border:rgba(255,255,255,0.08);--glass:rgba(255,255,255,0.04);
+  --r:16px;--rl:24px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.75}
+::selection{background:rgba(67,97,238,0.4);color:#fff}
+
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(6,7,26,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,#fff 30%,#7B9BFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.logo span{-webkit-text-fill-color:var(--cyan)}
+.nav-back{font-size:14px;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+
+/* HERO */
+.page-hero{padding:140px 0 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(67,97,238,0.12) 0%,transparent 70%);top:-200px;right:-100px;pointer-events:none}
+.breadcrumb{font-size:13px;color:var(--gray);margin-bottom:20px}
+.breadcrumb a{color:var(--gray);transition:color .2s}
+.breadcrumb a:hover{color:var(--cyan)}
+.breadcrumb span{margin:0 8px;opacity:.4}
+.page-title{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px}
+.gradient-text{background:linear-gradient(135deg,#4361EE 0%,#7209B7 50%,#00C9A7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-sub{color:var(--gray);font-size:16px}
+
+/* CONTENT */
+.legal-content{padding:0 0 100px}
+.legal-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rl);padding:40px;margin-bottom:24px;transition:border-color .3s}
+.legal-card:hover{border-color:rgba(67,97,238,0.25)}
+.legal-card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.legal-card h2 i{color:var(--cyan);font-size:16px;width:20px}
+.legal-card p{color:rgba(255,255,255,0.8);font-size:15px;line-height:1.75;margin-bottom:14px}
+.legal-card p:last-child{margin-bottom:0}
+.legal-card strong{color:var(--white)}
+.legal-card a{color:var(--cyan)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px}
+.info-item{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:16px}
+.info-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gray);margin-bottom:6px}
+.info-val{font-size:14px;font-weight:600}
+.update-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.2);color:var(--cyan);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:32px}
+
+/* FOOTER */
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
+.footer-copy{font-size:13px;color:var(--gray);margin-bottom:16px}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:var(--gray);transition:color .2s}
+.footer-links a:hover{color:var(--cyan)}
+
+@media(max-width:640px){
+  .info-grid{grid-template-columns:1fr}
+  .legal-card{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Practic<span>IA</span></a>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><span>›</span>Mentions légales</div>
+    <div class="update-badge"><i class="fa-solid fa-clock"></i> Mise à jour : avril 2026</div>
+    <h1 class="page-title">Mentions <span class="gradient-text">légales</span></h1>
+    <p class="page-sub">Conformément à l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
+  </div>
+</div>
+
+<div class="legal-content">
+  <div class="container">
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-building"></i> Éditeur du site</h2>
+      <div class="info-grid">
+        <div class="info-item"><div class="info-label">Raison sociale</div><div class="info-val">PraticIA</div></div>
+        <div class="info-item"><div class="info-label">Forme juridique</div><div class="info-val">Auto-entrepreneur / SASU (en cours)</div></div>
+        <div class="info-item"><div class="info-label">Dirigeant</div><div class="info-val">Quentin Malabave</div></div>
+        <div class="info-item"><div class="info-label">Email de contact</div><div class="info-val"><a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a></div></div>
+        <div class="info-item"><div class="info-label">Siège social</div><div class="info-val">France</div></div>
+        <div class="info-item"><div class="info-label">Numéro SIRET</div><div class="info-val">En cours d'immatriculation</div></div>
+      </div>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-server"></i> Hébergement</h2>
+      <p>Le site <strong>pratica.fr</strong> est hébergé par :</p>
+      <div class="info-grid">
+        <div class="info-item"><div class="info-label">Hébergeur</div><div class="info-val">GitHub Pages</div></div>
+        <div class="info-item"><div class="info-label">Société</div><div class="info-val">GitHub, Inc.</div></div>
+        <div class="info-item"><div class="info-label">Adresse</div><div class="info-val">88 Colin P Kelly Jr Street, San Francisco, CA 94107, USA</div></div>
+        <div class="info-item"><div class="info-label">Site</div><div class="info-val"><a href="https://pages.github.com" target="_blank">pages.github.com</a></div></div>
+      </div>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-copyright"></i> Propriété intellectuelle</h2>
+      <p>L'ensemble de ce site web — textes, visuels, logotypes, code source, structure — est la propriété exclusive de PraticIA et de son dirigeant, sauf mention contraire.</p>
+      <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sauf autorisation écrite préalable de PraticIA.</p>
+      <p>Toute exploitation non autorisée du site ou de son contenu sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de la Propriété Intellectuelle.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-shield-halved"></i> Données personnelles</h2>
+      <p>PraticIA s'engage à respecter le Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et la loi Informatique et Libertés modifiée.</p>
+      <p>Les données collectées via les formulaires de contact sont utilisées uniquement pour répondre aux demandes des utilisateurs et ne sont jamais cédées à des tiers.</p>
+      <p>Pour toute demande d'accès, de rectification ou de suppression de vos données : <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a></p>
+      <p>Pour plus d'informations, consultez notre <a href="politique-confidentialite.html">Politique de confidentialité</a>.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-cookie"></i> Cookies</h2>
+      <p>Ce site n'utilise pas de cookies à des fins publicitaires ou de tracking tiers. Des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés (session, préférences).</p>
+      <p>En naviguant sur ce site, vous acceptez l'utilisation de ces cookies techniques. Aucun cookie de profilage ou publicitaire n'est déposé.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-triangle-exclamation"></i> Limitation de responsabilité</h2>
+      <p>PraticIA ne saurait être tenu responsable des dommages directs ou indirects causés au matériel de l'utilisateur lors de l'accès au site, résultant de l'utilisation d'un matériel ne répondant pas aux spécifications techniques requises.</p>
+      <p>Des espaces interactifs sont à la disposition des utilisateurs. PraticIA se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable.</p>
+      <p>PraticIA s'efforce de fournir des informations aussi précises que possible sur le site. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes et des carences dans la mise à jour.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-gavel"></i> Droit applicable et juridiction</h2>
+      <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux compétents de France seront seuls compétents.</p>
+      <p>Pour toute question relative à ces mentions légales : <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a></p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-copy">© 2026 PraticIA. Tous droits réservés.</div>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="cgv.html">CGV</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="mailto:pratic.ia@outlook.fr">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

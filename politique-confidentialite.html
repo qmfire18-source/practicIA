@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Politique de confidentialité — PraticIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06071A;--bg2:#0B0D2A;
+  --blue:#4361EE;--purple:#7209B7;--cyan:#00C9A7;--pink:#F72585;
+  --white:#fff;--gray:#A0A8C0;
+  --border:rgba(255,255,255,0.08);--glass:rgba(255,255,255,0.04);
+  --r:16px;--rl:24px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.75}
+::selection{background:rgba(67,97,238,0.4);color:#fff}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(6,7,26,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,#fff 30%,#7B9BFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.logo span{-webkit-text-fill-color:var(--cyan)}
+.nav-back{font-size:14px;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+.page-hero{padding:140px 0 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,0.1) 0%,transparent 70%);top:-200px;right:-100px;pointer-events:none}
+.breadcrumb{font-size:13px;color:var(--gray);margin-bottom:20px}
+.breadcrumb a{color:var(--gray);transition:color .2s}
+.breadcrumb a:hover{color:var(--cyan)}
+.breadcrumb span{margin:0 8px;opacity:.4}
+.page-title{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px}
+.gradient-text{background:linear-gradient(135deg,#4361EE 0%,#7209B7 50%,#00C9A7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-sub{color:var(--gray);font-size:16px}
+.legal-content{padding:0 0 100px}
+.legal-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rl);padding:40px;margin-bottom:24px;transition:border-color .3s}
+.legal-card:hover{border-color:rgba(0,201,167,0.2)}
+.legal-card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.legal-card h2 i{color:var(--cyan);font-size:16px;width:20px}
+.legal-card p,.legal-card li{color:rgba(255,255,255,0.8);font-size:15px;line-height:1.75;margin-bottom:12px}
+.legal-card p:last-child{margin-bottom:0}
+.legal-card strong{color:var(--white)}
+.legal-card a{color:var(--cyan)}
+.legal-card ul{padding-left:20px;margin-bottom:14px}
+.legal-card ul li{list-style:disc;color:rgba(255,255,255,0.8);font-size:15px;line-height:1.75;margin-bottom:6px}
+.update-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.2);color:var(--cyan);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:32px}
+.article-num{display:inline-block;background:linear-gradient(135deg,var(--cyan),var(--blue));color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-right:10px;vertical-align:middle}
+.rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.right-item{background:rgba(0,201,167,0.05);border:1px solid rgba(0,201,167,0.15);border-radius:14px;padding:18px}
+.right-item i{color:var(--cyan);font-size:18px;margin-bottom:10px;display:block}
+.right-item h4{font-size:14px;font-weight:700;margin-bottom:6px}
+.right-item p{font-size:13px;color:var(--gray);margin:0}
+.data-table{width:100%;border-collapse:collapse;margin:16px 0}
+.data-table th{background:rgba(0,201,167,0.1);padding:12px 16px;text-align:left;font-size:13px;font-weight:700;border-bottom:1px solid var(--border)}
+.data-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:rgba(255,255,255,0.02)}
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
+.footer-copy{font-size:13px;color:var(--gray);margin-bottom:16px}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:var(--gray);transition:color .2s}
+.footer-links a:hover{color:var(--cyan)}
+@media(max-width:640px){.legal-card{padding:24px}.rights-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Practic<span>IA</span></a>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><span>›</span>Politique de confidentialité</div>
+    <div class="update-badge"><i class="fa-solid fa-clock"></i> Mise à jour : avril 2026</div>
+    <h1 class="page-title">Politique de <span class="gradient-text">confidentialité</span></h1>
+    <p class="page-sub">Comment PraticIA collecte, utilise et protège vos données personnelles, conformément au RGPD.</p>
+  </div>
+</div>
+
+<div class="legal-content">
+  <div class="container">
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-eye"></i> <span class="article-num">1</span> Qui sommes-nous ?</h2>
+      <p><strong>PraticIA</strong> est un service d'automatisation IA pour cabinets médicaux, édité par Quentin Malabave.</p>
+      <p>Contact : <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a></p>
+      <p>Nous traitons des données personnelles dans le cadre de nos services. PraticIA agit à la fois comme <strong>responsable de traitement</strong> (pour ses propres données clients) et comme <strong>sous-traitant</strong> (pour les données patients de ses clients médecins).</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-database"></i> <span class="article-num">2</span> Données que nous collectons</h2>
+      <p><strong>A. Données des professionnels de santé (nos clients)</strong></p>
+      <table class="data-table">
+        <tr><th>Donnée</th><th>Finalité</th><th>Base légale</th></tr>
+        <tr><td>Nom, prénom, email</td><td>Création et gestion du compte</td><td>Exécution du contrat</td></tr>
+        <tr><td>Spécialité médicale</td><td>Personnalisation des agents</td><td>Exécution du contrat</td></tr>
+        <tr><td>Données de paiement Stripe</td><td>Facturation (hébergées par Stripe)</td><td>Exécution du contrat</td></tr>
+        <tr><td>Logs d'utilisation</td><td>Support et amélioration du service</td><td>Intérêt légitime</td></tr>
+      </table>
+
+      <p><strong>B. Données des patients des cabinets (sous-traitance)</strong></p>
+      <table class="data-table">
+        <tr><th>Donnée</th><th>Usage</th><th>Qui la stocke ?</th></tr>
+        <tr><td>Prénom du patient</td><td>Personnalisation des messages WhatsApp</td><td>Google Sheets du cabinet</td></tr>
+        <tr><td>Numéro de téléphone</td><td>Envoi des messages WhatsApp via Wati.io</td><td>Google Sheets + Wati.io</td></tr>
+        <tr><td>Type de soin générique</td><td>Sélection du bon template de message</td><td>Google Sheets du cabinet</td></tr>
+        <tr><td>Date de consultation</td><td>Déclenchement automatique des envois</td><td>Google Sheets du cabinet</td></tr>
+      </table>
+      <p>⚠️ <strong>Aucune donnée médicale confidentielle</strong> (diagnostic, dossier médical, ordonnance) n'est traitée par PraticIA.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-clock"></i> <span class="article-num">3</span> Durée de conservation</h2>
+      <ul>
+        <li><strong>Données clients (professionnels de santé)</strong> : conservées pendant la durée du contrat + 3 ans après résiliation pour des raisons légales (fiscalité)</li>
+        <li><strong>Données patients</strong> : conservées uniquement dans le Google Sheets du cabinet, sous le contrôle exclusif du praticien</li>
+        <li><strong>Logs techniques</strong> : 90 jours</li>
+        <li><strong>Formulaires de contact</strong> : 1 an après le dernier échange</li>
+      </ul>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-share-nodes"></i> <span class="article-num">4</span> Partage des données</h2>
+      <p>PraticIA ne vend jamais vos données. Nous partageons uniquement les données strictement nécessaires avec nos sous-traitants techniques :</p>
+      <ul>
+        <li><strong>Stripe</strong> — paiement sécurisé (données bancaires jamais vues par PraticIA)</li>
+        <li><strong>Wati.io</strong> — envoi des messages WhatsApp (prénom + téléphone + type de soin générique uniquement)</li>
+        <li><strong>Make.com</strong> — orchestration des workflows (accès en lecture aux Google Sheets)</li>
+        <li><strong>Google Workspace</strong> — hébergement des Google Sheets</li>
+        <li><strong>Formspree</strong> — traitement des formulaires de contact</li>
+      </ul>
+      <p>Tous ces prestataires sont conformes au RGPD et disposent de certifications de sécurité appropriées.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-globe"></i> <span class="article-num">5</span> Transferts hors UE</h2>
+      <p>Certains de nos sous-traitants (Stripe, GitHub Pages) sont des sociétés américaines. Ces transferts sont encadrés par les clauses contractuelles types (CCT) approuvées par la Commission Européenne.</p>
+      <p>Google Workspace offre la possibilité de stocker les données en Europe (UE). Nous recommandons à nos clients d'activer cette option dans leurs paramètres Google Workspace.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-user-check"></i> <span class="article-num">6</span> Vos droits RGPD</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <div class="rights-grid">
+        <div class="right-item"><i class="fa-solid fa-magnifying-glass"></i><h4>Droit d'accès</h4><p>Obtenir une copie de vos données personnelles</p></div>
+        <div class="right-item"><i class="fa-solid fa-pen"></i><h4>Droit de rectification</h4><p>Corriger des données inexactes ou incomplètes</p></div>
+        <div class="right-item"><i class="fa-solid fa-trash"></i><h4>Droit à l'effacement</h4><p>Demander la suppression de vos données ("droit à l'oubli")</p></div>
+        <div class="right-item"><i class="fa-solid fa-ban"></i><h4>Droit d'opposition</h4><p>Vous opposer au traitement de vos données</p></div>
+        <div class="right-item"><i class="fa-solid fa-pause"></i><h4>Droit à la limitation</h4><p>Limiter temporairement le traitement</p></div>
+        <div class="right-item"><i class="fa-solid fa-download"></i><h4>Portabilité</h4><p>Recevoir vos données dans un format structuré</p></div>
+      </div>
+      <p style="margin-top:20px">Pour exercer vos droits : <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a>. Nous répondons sous 30 jours.</p>
+      <p>Vous pouvez également introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank">cnil.fr</a></p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-lock"></i> <span class="article-num">7</span> Sécurité des données</h2>
+      <p>PraticIA met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données :</p>
+      <ul>
+        <li>Connexions sécurisées HTTPS sur l'ensemble du site</li>
+        <li>Accès aux Google Sheets via comptes de service Google avec permissions minimales</li>
+        <li>Clés API Wati.io et Make.com jamais exposées côté client</li>
+        <li>Accès interne aux données limité aux seules personnes habilitées</li>
+      </ul>
+      <p>En cas de violation de données susceptible d'engendrer un risque pour vos droits, nous nous engageons à vous notifier dans les 72 heures conformément à l'article 33 du RGPD.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-cookie-bite"></i> <span class="article-num">8</span> Cookies</h2>
+      <p>Ce site utilise uniquement des cookies techniques strictement nécessaires à son fonctionnement. Aucun cookie publicitaire ou de tracking tiers n'est utilisé.</p>
+      <p>Vous pouvez configurer votre navigateur pour refuser les cookies, mais certaines fonctionnalités du site pourraient ne plus fonctionner correctement.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-rotate"></i> <span class="article-num">9</span> Modifications de cette politique</h2>
+      <p>PraticIA se réserve le droit de modifier la présente politique de confidentialité à tout moment, notamment pour se conformer à l'évolution de la réglementation. La version en vigueur est toujours accessible sur cette page.</p>
+      <p>En cas de modification substantielle, les clients seront informés par email au moins 30 jours avant l'entrée en vigueur des changements.</p>
+      <p><strong>Date de dernière mise à jour :</strong> Avril 2026</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-copy">© 2026 PraticIA. Tous droits réservés.</div>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="mailto:pratic.ia@outlook.fr">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

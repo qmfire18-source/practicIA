@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Conditions Générales de Vente — PraticIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06071A;--bg2:#0B0D2A;
+  --blue:#4361EE;--purple:#7209B7;--cyan:#00C9A7;--pink:#F72585;
+  --white:#fff;--gray:#A0A8C0;
+  --border:rgba(255,255,255,0.08);--glass:rgba(255,255,255,0.04);
+  --r:16px;--rl:24px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.75}
+::selection{background:rgba(67,97,238,0.4);color:#fff}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(6,7,26,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,#fff 30%,#7B9BFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.logo span{-webkit-text-fill-color:var(--cyan)}
+.nav-back{font-size:14px;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+.page-hero{padding:140px 0 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(114,9,183,0.12) 0%,transparent 70%);top:-200px;right:-100px;pointer-events:none}
+.breadcrumb{font-size:13px;color:var(--gray);margin-bottom:20px}
+.breadcrumb a{color:var(--gray);transition:color .2s}
+.breadcrumb a:hover{color:var(--cyan)}
+.breadcrumb span{margin:0 8px;opacity:.4}
+.page-title{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px}
+.gradient-text{background:linear-gradient(135deg,#4361EE 0%,#7209B7 50%,#00C9A7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-sub{color:var(--gray);font-size:16px}
+.legal-content{padding:0 0 100px}
+.legal-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rl);padding:40px;margin-bottom:24px;transition:border-color .3s}
+.legal-card:hover{border-color:rgba(67,97,238,0.25)}
+.legal-card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.legal-card h2 i{color:var(--cyan);font-size:16px;width:20px}
+.legal-card p,.legal-card li{color:rgba(255,255,255,0.8);font-size:15px;line-height:1.75;margin-bottom:12px}
+.legal-card p:last-child{margin-bottom:0}
+.legal-card strong{color:var(--white)}
+.legal-card a{color:var(--cyan)}
+.legal-card ul{padding-left:20px;margin-bottom:14px}
+.legal-card ul li{list-style:disc;color:rgba(255,255,255,0.8);font-size:15px;line-height:1.75;margin-bottom:6px}
+.update-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.2);color:var(--cyan);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:32px}
+.article-num{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--purple));color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-right:10px;vertical-align:middle}
+.price-table{width:100%;border-collapse:collapse;margin:20px 0}
+.price-table th{background:rgba(67,97,238,0.15);padding:12px 16px;text-align:left;font-size:13px;font-weight:700;border-bottom:1px solid var(--border)}
+.price-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05)}
+.price-table tr:last-child td{border-bottom:none}
+.price-table tr:hover td{background:rgba(255,255,255,0.02)}
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
+.footer-copy{font-size:13px;color:var(--gray);margin-bottom:16px}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:var(--gray);transition:color .2s}
+.footer-links a:hover{color:var(--cyan)}
+@media(max-width:640px){.legal-card{padding:24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Practic<span>IA</span></a>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><span>›</span>CGV</div>
+    <div class="update-badge"><i class="fa-solid fa-clock"></i> Version en vigueur : avril 2026</div>
+    <h1 class="page-title">Conditions Générales<br/><span class="gradient-text">de Vente</span></h1>
+    <p class="page-sub">Ces CGV régissent l'ensemble des relations commerciales entre PraticIA et ses clients.</p>
+  </div>
+</div>
+
+<div class="legal-content">
+  <div class="container">
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-info-circle"></i> Préambule</h2>
+      <p>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre <strong>PraticIA</strong> (ci-après "le Prestataire") et tout professionnel de santé ou cabinet médical souscrivant à ses services (ci-après "le Client").</p>
+      <p>Toute souscription à un abonnement PraticIA implique l'acceptation pleine et entière des présentes CGV. Le Client déclare avoir pris connaissance des présentes conditions avant toute commande.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-briefcase"></i> <span class="article-num">Art. 1</span> Description des services</h2>
+      <p>PraticIA propose des agents d'automatisation à destination des cabinets médicaux (dentistes, kinésithérapeutes, médecins généralistes et spécialistes), reposant sur la stack suivante : Make.com, Wati.io (WhatsApp Business API) et Google Sheets.</p>
+      <p>Les services sont proposés sous forme d'abonnements mensuels :</p>
+      <ul>
+        <li><strong>Starter (99€/mois)</strong> — Agent Nova (Avis Google), jusqu'à 150 consultations/mois</li>
+        <li><strong>Pro (199€/mois)</strong> — 3 agents (Nova + Echo + Aria), jusqu'à 300 consultations/mois</li>
+        <li><strong>Cabinet+ (sur devis)</strong> — Solution multi-praticiens sur mesure, volume illimité</li>
+      </ul>
+      <p>L'installation et la configuration initiale sont incluses dans tous les plans. Le Prestataire se réserve le droit de modifier les services et tarifs sous réserve d'en informer le Client 30 jours à l'avance.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-credit-card"></i> <span class="article-num">Art. 2</span> Tarifs et facturation</h2>
+      <table class="price-table">
+        <tr><th>Plan</th><th>Tarif mensuel HT</th><th>Engagement</th></tr>
+        <tr><td>Starter</td><td>99 € / mois</td><td>Sans engagement</td></tr>
+        <tr><td>Pro</td><td>199 € / mois</td><td>Sans engagement</td></tr>
+        <tr><td>Cabinet+</td><td>Sur devis</td><td>Devis personnalisé</td></tr>
+      </table>
+      <p>Les prix sont indiqués en euros. La TVA applicable (20%) sera ajoutée si le Prestataire est assujetti à la TVA au moment de la facturation.</p>
+      <p>Le paiement s'effectue par carte bancaire via la plateforme sécurisée <strong>Stripe</strong>. Le prélèvement est automatique chaque mois à date anniversaire de souscription.</p>
+      <p>En cas d'échec de paiement, le Prestataire se réserve le droit de suspendre l'accès aux services après mise en demeure par email restée sans suite sous 7 jours.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-rocket"></i> <span class="article-num">Art. 3</span> Souscription et mise en service</h2>
+      <p>La souscription est effective dès validation du paiement via Stripe. Le Prestataire s'engage à contacter le Client dans les <strong>24 heures ouvrées</strong> suivant la souscription pour planifier la session d'installation.</p>
+      <p>L'installation est réalisée à distance par partage d'écran. Elle dure entre 1h et 3h selon le plan souscrit. Le Client doit disposer d'un ordinateur, d'une connexion internet et d'un compte Google (Gmail/Google Sheets).</p>
+      <p>L'accès à WhatsApp Business API via Wati.io est soumis à l'approbation de Meta. Le Prestataire accompagne le Client dans ces démarches mais ne peut garantir les délais d'approbation de Meta (généralement 24 à 72h).</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-gift"></i> <span class="article-num">Art. 4</span> Période d'essai et droit de rétractation</h2>
+      <p>Tous les plans bénéficient d'une <strong>période d'essai de 7 jours</strong> sans engagement. Aucune carte bancaire n'est requise durant l'essai pour les plans Starter et Pro (selon disponibilité de cette fonctionnalité sur Stripe).</p>
+      <p>Conformément à l'article L221-18 du Code de la consommation, le Client professionnel (B2B) ne bénéficie pas du délai légal de rétractation de 14 jours. Toutefois, PraticIA offre contractuellement une <strong>garantie satisfait ou remboursé de 7 jours</strong> à compter de la mise en service effective des agents.</p>
+      <p>Pour exercer cette garantie, le Client doit en faire la demande par email à <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a> en précisant le motif. Le remboursement est traité dans les 5 à 10 jours ouvrés via Stripe.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="article-num">Art. 5</span> Résiliation</h2>
+      <p>Le Client peut résilier son abonnement à tout moment depuis son espace client Stripe, sans frais ni pénalité. La résiliation prend effet à la fin de la période mensuelle en cours.</p>
+      <p>En cas de résiliation, le Prestataire fera ses meilleurs efforts pour exporter et transmettre les données de configuration au Client dans les 14 jours.</p>
+      <p>Le Prestataire peut également résilier l'abonnement en cas de non-paiement, de violation des CGV ou d'utilisation abusive des services, après notification par email avec un délai de 7 jours.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-shield-halved"></i> <span class="article-num">Art. 6</span> Obligations des parties</h2>
+      <p><strong>Obligations du Prestataire :</strong></p>
+      <ul>
+        <li>Mettre en service les agents dans les délais convenus</li>
+        <li>Assurer la maintenance et le bon fonctionnement des workflows</li>
+        <li>Répondre aux demandes de support dans un délai raisonnable (24h ouvrées)</li>
+        <li>Informer le Client de toute modification substantielle du service</li>
+      </ul>
+      <p><strong>Obligations du Client :</strong></p>
+      <ul>
+        <li>Fournir les informations nécessaires à la configuration (Google Sheet ID, numéro WhatsApp…)</li>
+        <li>Saisir les données patients dans Google Sheets selon le format convenu</li>
+        <li>Informer ses patients de l'existence de communications automatisées</li>
+        <li>Respecter le droit d'opposition des patients (STOP)</li>
+        <li>Obtenir les consentements nécessaires conformément au RGPD</li>
+      </ul>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-database"></i> <span class="article-num">Art. 7</span> Données personnelles et RGPD</h2>
+      <p>Le Client reste responsable du traitement des données personnelles de ses patients au sens du RGPD. PraticIA agit en qualité de <strong>sous-traitant</strong> et s'engage à :</p>
+      <ul>
+        <li>Ne traiter les données qu'aux fins d'exécution du service</li>
+        <li>Ne pas céder les données à des tiers</li>
+        <li>Appliquer des mesures de sécurité appropriées</li>
+        <li>Supprimer les données sur demande du Client</li>
+      </ul>
+      <p>Les agents n'accèdent à aucune donnée médicale. Seuls le prénom, le numéro de téléphone et un type de soin générique sont utilisés. Les données restent hébergées dans le Google Sheets du cabinet.</p>
+      <p>Consultez notre <a href="politique-confidentialite.html">Politique de confidentialité</a> pour plus d'informations.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-circle-exclamation"></i> <span class="article-num">Art. 8</span> Limitation de responsabilité</h2>
+      <p>PraticIA s'engage à faire ses meilleurs efforts pour assurer la disponibilité des services (objectif : 99% de disponibilité mensuelle). En cas d'interruption liée à des tiers (Make.com, Wati.io, WhatsApp/Meta, Google), la responsabilité du Prestataire ne saurait être engagée.</p>
+      <p>La responsabilité du Prestataire est en tout état de cause limitée au montant des sommes effectivement versées par le Client au cours des 3 derniers mois précédant le sinistre.</p>
+      <p>PraticIA ne saurait être tenu responsable des résultats obtenus (nombre d'avis, taux de réponse, retour de patients) qui dépendent de nombreux facteurs extérieurs.</p>
+    </div>
+
+    <div class="legal-card">
+      <h2><i class="fa-solid fa-gavel"></i> <span class="article-num">Art. 9</span> Droit applicable et litiges</h2>
+      <p>Les présentes CGV sont régies par le <strong>droit français</strong>. En cas de litige, les parties s'engagent à rechercher une solution amiable avant tout recours judiciaire.</p>
+      <p>À défaut d'accord amiable dans un délai de 30 jours, tout litige relatif aux présentes CGV sera soumis à la compétence exclusive des <strong>Tribunaux de Commerce français</strong>.</p>
+      <p>Pour toute réclamation : <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a></p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-copy">© 2026 PraticIA. Tous droits réservés.</div>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="mailto:pratic.ia@outlook.fr">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
