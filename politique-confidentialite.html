@@ -112,7 +112,7 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
       <table class="data-table">
         <tr><th>Donnée</th><th>Usage</th><th>Qui la stocke ?</th></tr>
         <tr><td>Prénom du patient</td><td>Personnalisation des messages WhatsApp</td><td>Google Sheets du cabinet</td></tr>
-        <tr><td>Numéro de téléphone</td><td>Envoi des messages WhatsApp via Wati.io</td><td>Google Sheets + Wati.io</td></tr>
+        <tr><td>Numéro de téléphone</td><td>Envoi des SMS transactionnels via Brevo</td><td>Google Sheets + Brevo (transit)</td></tr>
         <tr><td>Type de soin générique</td><td>Sélection du bon template de message</td><td>Google Sheets du cabinet</td></tr>
         <tr><td>Date de consultation</td><td>Déclenchement automatique des envois</td><td>Google Sheets du cabinet</td></tr>
       </table>
@@ -136,6 +136,7 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
         <li><strong>Stripe</strong> — paiement sécurisé (données bancaires jamais vues par PraticIA)</li>
         <li><strong>Wati.io</strong> — envoi des messages WhatsApp (prénom + téléphone + type de soin générique uniquement)</li>
         <li><strong>Make.com</strong> — orchestration des workflows d'automatisation, opéré depuis le compte Make.com de PraticIA. Make accède en lecture aux Google Sheets des cabinets clients uniquement pour déclencher les envois de messages.</li>
+        <li><strong>Brevo (Sendinblue SAS)</strong> — envoi des SMS transactionnels aux patients (numéro de téléphone + contenu du message uniquement). Société française, données hébergées en Europe.</li>
         <li><strong>Google Workspace</strong> — hébergement des Google Sheets des cabinets (sous le contrôle du praticien)</li>
       </ul>
       <p>Tous ces prestataires sont conformes au RGPD et disposent de certifications de sécurité appropriées.</p>
