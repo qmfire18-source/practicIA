@@ -136,7 +136,8 @@ a{color:inherit;text-decoration:none}
 
 /* ══ PROBLEM ══ */
 #problem{position:relative;overflow:hidden}
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.pain-text{min-width:0;overflow-wrap:break-word;word-break:break-word}
 .problem-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:800;line-height:1.15;margin:16px 0 24px}
 .problem-sub{color:var(--gray);font-size:17px;line-height:1.7;margin-bottom:32px}
 .pain-list{display:flex;flex-direction:column;gap:14px}
@@ -153,7 +154,7 @@ a{color:inherit;text-decoration:none}
 .stat-item-header{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
 .stat-bar{height:8px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden}
 .stat-fill{height:100%;border-radius:100px;width:0;transition:width 2s ease}
-.loss-card{position:absolute;bottom:-28px;right:-24px;background:rgba(247,37,133,0.12);border:1px solid rgba(247,37,133,0.25);border-radius:14px;padding:18px 22px;backdrop-filter:blur(20px);transition:transform .3s}
+.loss-card{position:absolute;bottom:-20px;right:0;background:rgba(247,37,133,0.12);border:1px solid rgba(247,37,133,0.25);border-radius:14px;padding:18px 22px;backdrop-filter:blur(20px);transition:transform .3s}
 .loss-card:hover{transform:scale(1.05) rotate(-1deg) !important}
 .loss-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--pink)}
 .loss-label{font-size:12px;color:var(--gray)}
@@ -606,11 +607,11 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
         <div class="pain-list">
           <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-user-slash"></i></div><div class="pain-text"><strong>30 à 40% de patients ne reviennent jamais</strong><span>Après un soin, la majorité ne reprend pas spontanément rendez-vous.</span></div></div>
           <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-star-half-stroke"></i></div><div class="pain-text"><strong>Votre cabinet est invisible sur Google</strong><span>Un cabinet avec 12 avis perd face à un concurrent avec 200, même s'il est meilleur.</span></div></div>
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="pain-text"><strong>Les créneaux annulés restent vides</strong><span>Un patient annule → personne ne rappelle la liste d'attente → argent perdu.</span></div></div>
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-comment-slash"></i></div><div class="pain-text"><strong>Zéro suivi post-traitement</strong><span>Après une extraction ou une opération — silence radio. Le patient se sent abandonné.</span></div></div>
+          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="pain-text"><strong>Les annulations restent non comblées</strong><span>Un patient annule → personne ne rappelle la liste d'attente → argent perdu.</span></div></div>
+          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-comment-slash"></i></div><div class="pain-text"><strong>Aucun suivi après les soins</strong><span>Après une extraction ou une opération — silence radio. Le patient se sent abandonné.</span></div></div>
         </div>
       </div>
-      <div class="stats-visual reveal" style="position:relative">
+      <div class="stats-visual reveal" style="position:relative;padding-bottom:48px">
         <div class="stat-card">
           <p style="font-size:13px;color:var(--gray);margin-bottom:22px;font-weight:700;text-transform:uppercase;letter-spacing:.05em">Sans PraticIA — Cabinet type</p>
           <div class="stat-row">
@@ -1110,7 +1111,7 @@ const agentData = {
     ],
     vous:['Saisir prénom + téléphone dans le Sheet','Rien d\'autre — vraiment'],
     nova:['Scanner le Sheet toutes les 15 min','Envoyer le SMS personnalisé','Marquer la ligne comme traitée','Éviter tout doublon'],
-    stats:[{num:'+18',lbl:'avis Google par mois en moyenne'},{num:'98%',lbl:'taux de délivrabilité SMS'},{num:'0.045€',lbl:'coût par SMS (transparent)'}],
+    stats:[{num:'+18',lbl:'avis Google par mois en moyenne'},{num:'98%',lbl:'taux de délivrabilité SMS'},{num:'24/7',lbl:'tourne sans intervention humaine'}],
     privacy:['Seuls le prénom et le téléphone transitent','Aucune donnée médicale n\'est jamais transmise','Conforme RGPD — aucun stockage externe','Les données restent dans votre Google Drive']
   },
   echo: {
@@ -1216,7 +1217,7 @@ function openAgentModal(id){
       </div>
     </div>
     <div class="am-modal-cta">
-      <button onclick="document.getElementById('agent-modal-overlay').classList.remove('open');openModal()" class="btn btn-primary btn-glow btn-lg"><i class="fa-solid fa-rocket"></i> Démarrer avec ${d.name}</button>
+      <button onclick="document.getElementById('agent-modal-overlay').classList.remove('open');document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" class="btn btn-primary btn-glow btn-lg"><i class="fa-solid fa-rocket"></i> Démarrer avec ${d.name}</button>
     </div>
   `;
   overlay.classList.add('open');
