@@ -674,7 +674,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
           <div class="agent-avatar" style="background:rgba(67,97,238,0.12)">💚</div>
           <div class="agent-name">Echo</div>
           <div class="agent-role">Agent Rétention Patient</div>
-          <div class="agent-desc">Echo envoie un SMS chaleureux et personnalisé aux patients inactifs depuis plus de 6 mois. La relance est activée selon le souhait de chaque cabinet — sans rien imposer.</div>
+          <div class="agent-desc">Echo envoie un SMS personnalisé aux patients inactifs depuis plus de 6 mois, selon une liste que vous alimentez. Activation optionnelle, cabinet par cabinet.</div>
           <div class="agent-features">
             <div class="agent-feature"><i class="fa-solid fa-check"></i> Détection automatique des inactifs</div>
             <div class="agent-feature"><i class="fa-solid fa-check"></i> Message personnalisé par praticien</div>
@@ -1109,7 +1109,7 @@ const agentData = {
     emoji:'⭐', name:'Nova', role:'Agent Avis Google',
     c1:'#00C9A7', c2:'#4361EE',
     mission:'Nova surveille votre Google Sheet toutes les 15 minutes. Dès qu\'un nouveau patient est ajouté avec son prénom et son téléphone, elle lui envoie automatiquement un SMS personnalisé pour l\'inviter à laisser un avis sur votre fiche Google.',
-    sms:[{label:'SMS envoyé au patient', text:'"Bonjour Marie, merci pour votre consultation chez le Dr Dupont. Un avis Google nous aiderait vraiment : https://g.page/r/... Merci et bonne journée !"'}],
+    sms:[{label:'SMS envoyé au patient', text:'"Bonjour Marie, merci pour votre visite chez le Dr Dupont. Votre avis nous aide à améliorer notre service : https://g.page/r/..."'}],
     steps:[
       {title:'La secrétaire saisit les données', desc:'Prénom, nom et numéro de téléphone du patient dans le Google Sheet après chaque consultation — 10 secondes de travail.'},
       {title:'Nova scanne toutes les 15 minutes', desc:'Elle vérifie automatiquement si de nouvelles lignes sont apparues et si le SMS n\'a pas encore été envoyé.'},
@@ -1125,10 +1125,9 @@ const agentData = {
   echo: {
     emoji:'💚', name:'Echo', role:'Agent Rétention Patient',
     c1:'#4361EE', c2:'#7209B7',
-    mission:'Echo analyse chaque matin la liste de vos patients et identifie ceux qui ne sont pas revenus depuis 6 mois ou plus. Il leur envoie un SMS chaleureux et personnalisé pour les inviter à reprendre rendez-vous — au bon moment, avec le bon message.',
+    mission:'Echo envoie un SMS aux patients que vous identifiez comme inactifs depuis plus de 6 mois. Vous alimentez une liste simple (prénom, téléphone, date de dernière visite), Echo s\'occupe du reste automatiquement. Un seul SMS par patient — zéro relance intrusive.',
     sms:[
-      {label:'SMS de relance', text:'"Bonjour Thomas, cela fait quelques mois que nous ne vous avons pas vu au cabinet du Dr Martin. N\'hésitez pas à nous appeler pour un rendez-vous. À bientôt !"'},
-      {label:'Relance J+7 si pas de réponse', text:'"Bonjour Thomas, nous voulions juste vous rappeler que le cabinet du Dr Martin reste disponible pour vous. Bonne journée !"'}
+      {label:'SMS de relance', text:'"Bonjour Marie, votre dernier suivi chez le Dr Dupont remonte à plus de 6 mois. En cas de douleur, gêne ou simplement pour un bilan, nous sommes disponibles. Prenez RDV ici : https://doctolib.fr/..."'}
     ],
     steps:[
       {title:'Votre liste patients dans le Sheet', desc:'Prénom, téléphone, date de dernière visite. Peut être exporté depuis votre logiciel médical.'},
@@ -1145,10 +1144,10 @@ const agentData = {
   aria: {
     emoji:'🛡️', name:'Aria', role:'Agent Suivi Post-Traitement',
     c1:'#7209B7', c2:'#F72585',
-    mission:'Aria prend soin de vos patients après chaque traitement. Elle envoie un SMS de suivi à J+1 puis à J+7, collecte les retours, et alerte immédiatement le praticien si un patient signale un problème ou une douleur.',
+    mission:'Aria envoie un email de suivi à vos patients 48h après chaque consultation, puis un second à J+7. Si un patient répond avec un mot-clé préoccupant (douleur, urgence, mal…), le praticien reçoit immédiatement une alerte par email — sans aucune intervention manuelle.',
     sms:[
-      {label:'SMS J+1 (lendemain du soin)', text:'"Bonjour Marie, comment vous sentez-vous aujourd\'hui après votre soin chez le Dr Dupont ? Tout se passe bien ? N\'hésitez pas à nous répondre si vous avez une question."'},
-      {label:'SMS J+7 (une semaine après)', text:'"Bonjour Marie, une semaine après votre traitement, nous espérons que tout va bien. Si vous souhaitez faire un point ou prendre RDV, nous sommes là."'}
+      {label:'Email à 48h (surlendemain du soin)', text:'"Bonjour Marie, nous espérons que vous allez bien suite à votre ostéopathie chez le Dr Dupont. Comment vous sentez-vous ? Avez-vous des questions ? Nous sommes disponibles au 01 23 45 67 89."'},
+      {label:'Email J+7 (une semaine après)', text:'"Bonjour Marie, une semaine s\'est écoulée depuis votre ostéopathie chez le Dr Dupont. Nous espérons que vous allez bien. Si vous avez des douleurs persistantes ou des questions, n\'hésitez pas à prendre un nouveau rendez-vous."'}
     ],
     steps:[
       {title:'Note du type de soin dans le Sheet', desc:'La secrétaire indique le type de traitement et la date dans le Google Sheet après la consultation.'},

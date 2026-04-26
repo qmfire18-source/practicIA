@@ -93,7 +93,7 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
     <div class="legal-card">
       <h2><i class="fa-solid fa-eye"></i> <span class="article-num">1</span> Qui sommes-nous ?</h2>
       <p><strong>PraticIA</strong> est un service d'automatisation IA pour cabinets médicaux, édité par Quentin Malabave.</p>
-      <p>Contact : <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a></p>
+      <p>Contact : <a href="mailto:pratic.iaoff@gmail.com">pratic.iaoff@gmail.com</a></p>
       <p>Nous traitons des données personnelles dans le cadre de nos services. PraticIA agit à la fois comme <strong>responsable de traitement</strong> (pour ses propres données clients) et comme <strong>sous-traitant</strong> (pour les données patients de ses clients médecins).</p>
     </div>
 
@@ -111,9 +111,10 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
       <p><strong>B. Données des patients des cabinets (sous-traitance)</strong></p>
       <table class="data-table">
         <tr><th>Donnée</th><th>Usage</th><th>Qui la stocke ?</th></tr>
-        <tr><td>Prénom du patient</td><td>Personnalisation des messages WhatsApp</td><td>Google Sheets du cabinet</td></tr>
-        <tr><td>Numéro de téléphone</td><td>Envoi des SMS transactionnels via Brevo</td><td>Google Sheets + Brevo (transit)</td></tr>
-        <tr><td>Type de soin générique</td><td>Sélection du bon template de message</td><td>Google Sheets du cabinet</td></tr>
+        <tr><td>Prénom du patient</td><td>Personnalisation des messages SMS et emails</td><td>Google Sheets du cabinet</td></tr>
+        <tr><td>Numéro de téléphone</td><td>Envoi des SMS transactionnels via Brevo (agents Nova et Echo)</td><td>Google Sheets + Brevo (transit)</td></tr>
+        <tr><td>Adresse email du patient</td><td>Envoi des emails de suivi post-consultation via Gmail (agent Aria)</td><td>Google Sheets du cabinet</td></tr>
+        <tr><td>Type de soin générique</td><td>Personnalisation des messages envoyés</td><td>Google Sheets du cabinet</td></tr>
         <tr><td>Date de consultation</td><td>Déclenchement automatique des envois</td><td>Google Sheets du cabinet</td></tr>
       </table>
       <p>⚠️ <strong>Aucune donnée médicale confidentielle</strong> (diagnostic, dossier médical, ordonnance) n'est traitée par PraticIA.</p>
@@ -134,9 +135,9 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
       <p>PraticIA ne vend jamais vos données. Nous partageons uniquement les données strictement nécessaires avec nos sous-traitants techniques :</p>
       <ul>
         <li><strong>Stripe</strong> — paiement sécurisé (données bancaires jamais vues par PraticIA)</li>
-        <li><strong>Wati.io</strong> — envoi des messages WhatsApp (prénom + téléphone + type de soin générique uniquement)</li>
         <li><strong>Make.com</strong> — orchestration des workflows d'automatisation, opéré depuis le compte Make.com de PraticIA. Make accède en lecture aux Google Sheets des cabinets clients uniquement pour déclencher les envois de messages.</li>
-        <li><strong>Brevo (Sendinblue SAS)</strong> — envoi des SMS transactionnels aux patients (numéro de téléphone + contenu du message uniquement). Société française, données hébergées en Europe.</li>
+        <li><strong>Brevo (Sendinblue SAS)</strong> — envoi des SMS transactionnels aux patients via les agents Nova et Echo (numéro de téléphone + contenu du message uniquement). Société française, données hébergées en Europe.</li>
+        <li><strong>Gmail (Google)</strong> — envoi des emails de suivi post-consultation via l'agent Aria (adresse email + contenu du message uniquement). Données transitant par les serveurs Google.</li>
         <li><strong>Google Workspace</strong> — hébergement des Google Sheets des cabinets (sous le contrôle du praticien)</li>
       </ul>
       <p>Tous ces prestataires sont conformes au RGPD et disposent de certifications de sécurité appropriées.</p>
@@ -176,7 +177,7 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
         <div class="right-item"><i class="fa-solid fa-pause"></i><h4>Droit à la limitation</h4><p>Limiter temporairement le traitement</p></div>
         <div class="right-item"><i class="fa-solid fa-download"></i><h4>Portabilité</h4><p>Recevoir vos données dans un format structuré</p></div>
       </div>
-      <p style="margin-top:20px">Pour exercer vos droits : <a href="mailto:pratic.ia@outlook.fr">pratic.ia@outlook.fr</a>. Nous répondons sous 30 jours.</p>
+      <p style="margin-top:20px">Pour exercer vos droits : <a href="mailto:pratic.iaoff@gmail.com">pratic.iaoff@gmail.com</a>. Nous répondons sous 30 jours.</p>
       <p>Vous pouvez également introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank">cnil.fr</a></p>
     </div>
 
@@ -215,7 +216,7 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
       <a href="index.html">Accueil</a>
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
-      <a href="mailto:pratic.ia@outlook.fr">Contact</a>
+      <a href="mailto:pratic.iaoff@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
