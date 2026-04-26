@@ -273,10 +273,10 @@ a{color:inherit;text-decoration:none}
 .btn-cabinet:hover{background:rgba(247,37,133,0.2);border-color:var(--pink);transform:translateY(-3px)}
 
 /* ══ CONTACT MODAL ══ */
-#modal-overlay,#trial-modal-overlay,#team-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);z-index:9998;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
-#modal-overlay.open,#trial-modal-overlay.open,#team-modal-overlay.open{opacity:1;pointer-events:all}
+#modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);z-index:9998;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+#modal-overlay.open{opacity:1;pointer-events:all}
 .modal{background:var(--bg2);border:1px solid rgba(255,255,255,0.12);border-radius:var(--rl);padding:32px 40px;max-width:560px;width:100%;max-height:92vh;overflow-y:auto;position:relative;transform:scale(.95) translateY(20px);transition:transform .3s;box-shadow:0 40px 80px rgba(0,0,0,0.6)}
-#modal-overlay.open .modal,#trial-modal-overlay.open .modal,#team-modal-overlay.open .modal{transform:scale(1) translateY(0)}
+#modal-overlay.open .modal{transform:scale(1) translateY(0)}
 .modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--gray);font-size:20px;cursor:pointer;transition:color .2s}
 .modal-close:hover{color:white}
 .modal-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px}
@@ -344,6 +344,57 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
 .payment-secure{font-size:12px;color:var(--gray);opacity:.7}
 .payment-secure i{color:var(--cyan);margin-right:4px}
 .payment-plan-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700;background:linear-gradient(90deg,rgba(67,97,238,0.2),rgba(114,9,183,0.2));border:1px solid rgba(67,97,238,0.3);color:#7B9BFF;margin-bottom:12px}
+
+/* ══ AGENT DETAIL MODAL ══ */
+#agent-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(16px);z-index:9997;display:flex;align-items:flex-start;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;overflow-y:auto;padding:40px 16px}
+#agent-modal-overlay.open{opacity:1;pointer-events:all}
+.agent-modal{background:var(--bg2);border:1px solid rgba(255,255,255,0.12);border-radius:var(--rl);max-width:760px;width:100%;position:relative;transform:scale(.96) translateY(24px);transition:transform .35s;box-shadow:0 40px 100px rgba(0,0,0,0.7);overflow:hidden}
+#agent-modal-overlay.open .agent-modal{transform:scale(1) translateY(0)}
+.agent-modal-header{padding:40px 40px 32px;position:relative;background:linear-gradient(135deg,var(--am-c1,#00C9A7) 0%,var(--am-c2,#4361EE) 100%)}
+.agent-modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:none;color:white;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.agent-modal-close:hover{background:rgba(255,255,255,0.3)}
+.agent-modal-emoji{font-size:48px;margin-bottom:12px;display:block;line-height:1}
+.agent-modal-name{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:white;margin-bottom:4px}
+.agent-modal-role{font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.06em}
+.agent-modal-body{padding:36px 40px}
+.am-section{margin-bottom:32px}
+.am-section-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.am-section-title i{color:var(--cyan)}
+.am-mission{font-size:16px;color:rgba(255,255,255,0.85);line-height:1.75;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.am-sms-bubble{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.am-sms-label{font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.am-sms-text{background:linear-gradient(135deg,rgba(0,201,167,0.15),rgba(67,97,238,0.15));border:1px solid rgba(0,201,167,0.2);border-radius:12px 12px 12px 4px;padding:14px 16px;font-size:14px;color:rgba(255,255,255,0.9);line-height:1.6;font-style:italic}
+.am-sms-text2{background:linear-gradient(135deg,rgba(67,97,238,0.15),rgba(114,9,183,0.15));border:1px solid rgba(67,97,238,0.2);border-radius:12px 12px 12px 4px;padding:14px 16px;font-size:14px;color:rgba(255,255,255,0.9);line-height:1.6;font-style:italic;margin-top:10px}
+.am-steps{display:flex;flex-direction:column;gap:10px}
+.am-step{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;transition:border-color .3s}
+.am-step:hover{border-color:rgba(0,201,167,0.2)}
+.am-step-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;color:white}
+.am-step-text{font-size:14px;line-height:1.55;color:rgba(255,255,255,0.8)}
+.am-step-text strong{color:white;display:block;margin-bottom:2px;font-size:13px}
+.am-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.am-col{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;padding:18px}
+.am-col-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.am-col-items{display:flex;flex-direction:column;gap:8px}
+.am-col-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.75)}
+.am-col-item i{font-size:10px;flex-shrink:0}
+.am-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.am-stat{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.am-stat-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1;margin-bottom:4px}
+.am-stat-lbl{font-size:11px;color:var(--gray);line-height:1.4}
+.am-privacy{background:rgba(0,201,167,0.06);border:1px solid rgba(0,201,167,0.15);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.am-privacy-item{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.8)}
+.am-privacy-item i{color:var(--cyan);font-size:12px;flex-shrink:0}
+.am-modal-cta{margin-top:8px;padding:24px 40px 36px;border-top:1px solid var(--border);text-align:center}
+.agent-discover{display:inline-flex;align-items:center;gap:7px;margin-top:18px;padding:9px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;font-size:13px;font-weight:700;color:var(--white);cursor:pointer;transition:all .3s;font-family:inherit}
+.agent-discover:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2);transform:translateX(4px)}
+.agent-discover i{font-size:11px;transition:transform .3s}
+.agent-discover:hover i{transform:translateX(3px)}
+
+/* ══ CONTACT / TRIAL / TEAM MODALS ══ */
+#modal-overlay,#trial-modal-overlay,#team-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);z-index:9998;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+#modal-overlay.open,#trial-modal-overlay.open,#team-modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--bg2);border:1px solid rgba(255,255,255,0.12);border-radius:var(--rl);padding:32px 40px;max-width:560px;width:100%;max-height:92vh;overflow-y:auto;position:relative;transform:scale(.95) translateY(20px);transition:transform .3s;box-shadow:0 40px 80px rgba(0,0,0,0.6)}
+#modal-overlay.open .modal,#trial-modal-overlay.open .modal,#team-modal-overlay.open .modal{transform:scale(1) translateY(0)}
 
 /* ══ RESPONSIVE ══ */
 @media(max-width:900px){
@@ -424,6 +475,13 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
       <button onclick="closePaymentModalBtn()" class="btn btn-outline">Annuler</button>
     </div>
     <div class="payment-secure"><i class="fa-solid fa-shield"></i> Paiement sécurisé Stripe · Sans engagement · Annulable à tout moment</div>
+  </div>
+</div>
+
+<!-- ══ AGENT DETAIL MODAL ══ -->
+<div id="agent-modal-overlay" onclick="closeAgentModal(event)">
+  <div class="agent-modal" id="agent-modal-inner">
+    <!-- Populated by JS -->
   </div>
 </div>
 
@@ -658,6 +716,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
             <div class="agent-stat-num" style="color:var(--cyan)">+18</div>
             <div class="agent-stat-lbl">nouveaux avis Google par mois</div>
           </div>
+          <button class="agent-discover" onclick="openAgentModal('nova')">Découvrir en détail <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
       <div class="agent-card reveal" style="--c1:#4361EE;--c2:#7209B7">
@@ -676,6 +735,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
             <div class="agent-stat-num" style="color:var(--blue)">23%</div>
             <div class="agent-stat-lbl">des patients relancés reprennent RDV</div>
           </div>
+          <button class="agent-discover" onclick="openAgentModal('echo')">Découvrir en détail <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
       <div class="agent-card reveal" style="--c1:#7209B7;--c2:#F72585">
@@ -694,6 +754,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
             <div class="agent-stat-num" style="color:var(--pink)">100%</div>
             <div class="agent-stat-lbl">des patients suivis après chaque soin</div>
           </div>
+          <button class="agent-discover" onclick="openAgentModal('aria')">Découvrir en détail <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -1013,7 +1074,7 @@ document.querySelectorAll('.stat-fill[data-width]').forEach(bar=>{
   }});
 });
 
-// ── Price card hover (simple, sans tremblement) ──────────────
+// ── Price card hover (sans tremblement) ─────────────────────
 document.querySelectorAll('.price-card').forEach(card=>{
   card.addEventListener('mouseenter',()=>card.style.transform='translateY(-4px)');
   card.addEventListener('mouseleave',()=>card.style.transform='');
@@ -1091,7 +1152,7 @@ function confirmPayment(){
 function closePaymentModalBtn(){document.getElementById('payment-modal-overlay').classList.remove('open')}
 function closePaymentModal(e){if(e.target===document.getElementById('payment-modal-overlay'))closePaymentModalBtn()}
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closePaymentModalBtn();closeModalBtn();closeTrialModalBtn();closeTeamModalBtn()}
+  if(e.key==='Escape'){closePaymentModalBtn();closeModalBtn();closeTrialModalBtn();closeTeamModalBtn();document.getElementById('agent-modal-overlay').classList.remove('open')}
 });
 
 // ── Trial Modal (Essai 7 jours) ──────────────────────────────
@@ -1105,29 +1166,16 @@ function openTrialModal(plan){
 }
 function closeTrialModalBtn(){document.getElementById('trial-modal-overlay').classList.remove('open')}
 function closeTrialModal(e){if(e.target===document.getElementById('trial-modal-overlay'))closeTrialModalBtn()}
-
 function handleTrialSubmit(e){
   e.preventDefault();
-  const form=document.getElementById('trial-form');
-  const data=new FormData(form);
-  const prenom=data.get('prenom')||'';
-  const nom=data.get('nom')||'';
-  const email=data.get('email')||'';
-  const tel=data.get('tel')||'';
-  const specialite=data.get('specialite')||'';
-  const plan=data.get('_plan')||'';
+  const data=new FormData(document.getElementById('trial-form'));
+  const prenom=data.get('prenom')||'';const nom=data.get('nom')||'';
+  const email=data.get('email')||'';const tel=data.get('tel')||'';
+  const specialite=data.get('specialite')||'';const plan=data.get('_plan')||'';
   const subject=encodeURIComponent('Essai gratuit '+plan+' — '+prenom+' '+nom+' | PraticIA');
-  const body=encodeURIComponent(
-    'Nouvelle demande d\'essai gratuit 7 jours depuis le site PraticIA\n\n'+
-    'Plan demandé : '+plan+'\n'+
-    'Prénom : '+prenom+'\n'+
-    'Nom : '+nom+'\n'+
-    'Email : '+email+'\n'+
-    'Téléphone : '+tel+'\n'+
-    'Spécialité : '+specialite
-  );
+  const body=encodeURIComponent('Demande essai gratuit 7 jours\n\nPlan : '+plan+'\nPrénom : '+prenom+'\nNom : '+nom+'\nEmail : '+email+'\nTéléphone : '+tel+'\nSpécialité : '+specialite);
   window.open('mailto:quentinmalabave@gmail.com?subject='+subject+'&body='+body,'_blank');
-  form.style.display='none';
+  document.getElementById('trial-form').style.display='none';
   document.getElementById('trial-success').style.display='block';
 }
 
@@ -1139,29 +1187,135 @@ function openTeamModalFn(){
 }
 function closeTeamModalBtn(){document.getElementById('team-modal-overlay').classList.remove('open')}
 function closeTeamModal(e){if(e.target===document.getElementById('team-modal-overlay'))closeTeamModalBtn()}
-
 function handleTeamSubmit(e){
   e.preventDefault();
-  const form=document.getElementById('team-form');
-  const data=new FormData(form);
-  const prenom=data.get('prenom')||'';
-  const nom=data.get('nom')||'';
-  const email=data.get('email')||'';
-  const tel=data.get('tel')||'';
+  const data=new FormData(document.getElementById('team-form'));
+  const prenom=data.get('prenom')||'';const nom=data.get('nom')||'';
+  const email=data.get('email')||'';const tel=data.get('tel')||'';
   const message=data.get('message')||'';
-  const subject=encodeURIComponent('Demande contact équipe — '+prenom+' '+nom+' | PraticIA');
-  const body=encodeURIComponent(
-    'Nouvelle prise de contact depuis le site PraticIA\n\n'+
-    'Prénom : '+prenom+'\n'+
-    'Nom : '+nom+'\n'+
-    'Email : '+email+'\n'+
-    'Téléphone : '+tel+'\n'+
-    'Message : '+message
-  );
+  const subject=encodeURIComponent('Contact équipe — '+prenom+' '+nom+' | PraticIA');
+  const body=encodeURIComponent('Prise de contact depuis le site PraticIA\n\nPrénom : '+prenom+'\nNom : '+nom+'\nEmail : '+email+'\nTéléphone : '+tel+'\nMessage : '+message);
   window.open('mailto:quentinmalabave@gmail.com?subject='+subject+'&body='+body,'_blank');
-  form.style.display='none';
+  document.getElementById('team-form').style.display='none';
   document.getElementById('team-success').style.display='block';
 }
+
+// ── Agent Detail Modals ──────────────────────────────────────
+const agentData={
+  nova:{
+    emoji:'⭐',name:'Nova',role:'Agent Avis Google',c1:'#00C9A7',c2:'#4361EE',
+    mission:'Nova surveille votre Google Sheet chaque matin. Elle identifie les patients vus la veille et leur envoie automatiquement un SMS personnalisé pour les inviter à laisser un avis sur votre fiche Google.',
+    sms:[{label:'SMS envoyé au patient (le lendemain à 9h)',text:'"Bonjour Marie, merci pour votre consultation chez le Dr Dupont. Un avis Google nous aiderait vraiment : https://g.page/r/... Merci et bonne journée !"'}],
+    steps:[
+      {title:'La secrétaire saisit les données',desc:'Prénom, téléphone et date de consultation dans le Google Sheet — 10 secondes de travail.'},
+      {title:'Nova tourne tous les matins à 9h',desc:'Elle vérifie automatiquement les consultations de la veille et si le SMS n\'a pas encore été envoyé.'},
+      {title:'Envoi du SMS personnalisé',desc:'Le message inclut le prénom du patient et le nom du médecin. Le lien Google Review est directement intégré.'},
+      {title:'Marquage anti-doublon',desc:'Nova marque immédiatement la ligne "envoyé". Ce patient ne recevra jamais un deuxième SMS — zéro spam garanti.'},
+      {title:'C\'est tout',desc:'Aucune autre action requise de votre part. Nova tourne 24h/24 sans intervention.'}
+    ],
+    vous:['Saisir prénom + téléphone dans le Sheet','Rien d\'autre — vraiment'],
+    nova:['Scanner le Sheet chaque matin','Envoyer le SMS personnalisé','Marquer la ligne comme traitée','Éviter tout doublon'],
+    stats:[{num:'+18',lbl:'avis Google par mois en moyenne'},{num:'98%',lbl:'taux de délivrabilité SMS'},{num:'24/7',lbl:'tourne sans intervention humaine'}],
+    privacy:['Seuls le prénom et le téléphone transitent','Aucune donnée médicale n\'est jamais transmise','Conforme RGPD — aucun stockage externe','Les données restent dans votre Google Drive']
+  },
+  echo:{
+    emoji:'💚',name:'Echo',role:'Agent Rétention Patient',c1:'#4361EE',c2:'#7209B7',
+    mission:'Echo analyse chaque matin la liste de vos patients et identifie ceux qui ne sont pas revenus depuis 6 mois ou plus. Il leur envoie un SMS chaleureux et personnalisé pour les inviter à reprendre rendez-vous — au bon moment, avec le bon message.',
+    sms:[{label:'SMS de relance envoyé au patient',text:'"Bonjour Marie, votre dernier suivi chez le Dr Dupont remonte à plus de 6 mois. En cas de douleur, gêne ou simplement pour un bilan, nous sommes disponibles. Prenez RDV ici : https://doctolib.fr/..."'}],
+    steps:[
+      {title:'Votre liste patients dans le Sheet',desc:'Prénom, téléphone, date de dernière visite. Peut être exporté depuis votre logiciel médical.'},
+      {title:'Scan quotidien chaque matin',desc:'Echo parcourt chaque ligne et calcule l\'ancienneté depuis la dernière visite.'},
+      {title:'Détection des inactifs',desc:'Patients sans visite depuis 6+ mois — seuil ajustable selon votre spécialité.'},
+      {title:'Envoi du SMS de relance',desc:'Message chaleureux adapté à votre ton et votre spécialité. Le patient ne perçoit pas d\'automatisme.'},
+      {title:'Marquage et respect du STOP',desc:'Echo marque la ligne comme traitée. Le droit d\'opposition (répondre STOP) est respecté automatiquement.'}
+    ],
+    vous:['Tenir la liste patients à jour','Configurer le seuil d\'inactivité (6 mois par défaut)'],
+    nova:['Détecter les patients inactifs chaque matin','Envoyer les SMS de relance personnalisés','Marquer les lignes traitées','Respecter le droit STOP automatiquement'],
+    stats:[{num:'23%',lbl:'patients relancés reprennent RDV'},{num:'+11',lbl:'RDV récupérés/mois (200 patients)'},{num:'6 mois',lbl:'seuil d\'inactivité (configurable)'}],
+    privacy:['Seuls prénom et téléphone transmis','Aucune donnée médicale ou de diagnostic','Droit d\'opposition STOP intégré','Conforme RGPD — données dans votre Drive']
+  },
+  aria:{
+    emoji:'🛡️',name:'Aria',role:'Agent Suivi Post-Traitement',c1:'#7209B7',c2:'#F72585',
+    mission:'Aria prend soin de vos patients après chaque traitement. Elle envoie un email de suivi à 48h puis à J+7, collecte les retours, et alerte immédiatement le praticien si un patient signale un problème ou une douleur.',
+    sms:[
+      {label:'Email envoyé à 48h (J+2)',text:'"Bonjour Marie, nous espérons que vous allez bien suite à votre ostéopathie chez le Dr Dupont. Comment vous sentez-vous ? Avez-vous des questions ? Nous sommes disponibles au 01 23 45 67 89."'},
+      {label:'Email envoyé à J+7',text:'"Bonjour Marie, une semaine s\'est écoulée depuis votre ostéopathie chez le Dr Dupont. Nous espérons que vous allez bien. Si vous avez des douleurs persistantes ou des questions, n\'hésitez pas à prendre un nouveau rendez-vous."'}
+    ],
+    steps:[
+      {title:'Note du type de soin dans le Sheet',desc:'La secrétaire indique le type de traitement, la date et l\'email du patient dans le Google Sheet.'},
+      {title:'Aria calcule 48h et J+7',desc:'Automatiquement, elle programme les envois pour 48h après et 7 jours après la consultation.'},
+      {title:'Envoi de l\'email à 48h',desc:'Message de suivi bienveillant pour prendre des nouvelles. Personnalisé avec le nom du patient et du praticien.'},
+      {title:'Envoi de l\'email J+7',desc:'Deuxième point de suivi une semaine après. Invite à reprendre contact si besoin.'},
+      {title:'Détection et alerte praticien',desc:'Si le patient répond avec un mot-clé d\'alerte (douleur, problème, urgence…), un email est envoyé immédiatement au praticien.'}
+    ],
+    vous:['Indiquer le type de soin, la date et l\'email dans le Sheet','Traiter les alertes si un patient signale un problème'],
+    nova:['Calculer 48h et J+7 automatiquement','Envoyer les emails de suivi','Détecter les mots-clés d\'alerte','Notifier immédiatement le praticien'],
+    stats:[{num:'100%',lbl:'patients suivis après chaque soin'},{num:'48h/J+7',lbl:'deux points de contact automatiques'},{num:'0',lbl:'patients abandonnés sans suivi'}],
+    privacy:['Seuls prénom, email et type de soin transmis','Aucune donnée médicale détaillée','Les réponses patients restent dans votre Sheet','Conforme RGPD']
+  }
+};
+
+function openAgentModal(id){
+  const d=agentData[id];
+  const overlay=document.getElementById('agent-modal-overlay');
+  const inner=document.getElementById('agent-modal-inner');
+  const agentLabel='Ce que '+d.name.toUpperCase()+' fait automatiquement';
+  inner.innerHTML=`
+    <div class="agent-modal-header" style="background:linear-gradient(135deg,${d.c1},${d.c2})">
+      <button class="agent-modal-close" onclick="document.getElementById('agent-modal-overlay').classList.remove('open')"><i class="fa-solid fa-xmark"></i></button>
+      <span class="agent-modal-emoji">${d.emoji}</span>
+      <div class="agent-modal-name">${d.name}</div>
+      <div class="agent-modal-role">${d.role}</div>
+    </div>
+    <div class="agent-modal-body">
+      <div class="am-section">
+        <div class="am-section-title"><i class="fa-solid fa-bullseye"></i> Sa mission</div>
+        <div class="am-mission">${d.mission}</div>
+      </div>
+      <div class="am-section">
+        <div class="am-section-title"><i class="fa-solid fa-mobile-screen"></i> Exemple de message envoyé</div>
+        <div class="am-sms-bubble">
+          ${d.sms.map((s,i)=>`<div class="am-sms-label">${s.label}</div><div class="${i>0?'am-sms-text2':'am-sms-text'}">${s.text}</div>`).join('')}
+        </div>
+      </div>
+      <div class="am-section">
+        <div class="am-section-title"><i class="fa-solid fa-gears"></i> Comment ça marche — étape par étape</div>
+        <div class="am-steps">
+          ${d.steps.map((s,i)=>`<div class="am-step"><div class="am-step-num">${i+1}</div><div class="am-step-text"><strong>${s.title}</strong>${s.desc}</div></div>`).join('')}
+        </div>
+      </div>
+      <div class="am-section">
+        <div class="am-section-title"><i class="fa-solid fa-scale-balanced"></i> Répartition des tâches</div>
+        <div class="am-cols">
+          <div class="am-col" style="border-color:rgba(212,134,11,0.25)">
+            <div class="am-col-title" style="color:#D4860B">Ce que VOUS faites</div>
+            <div class="am-col-items">${d.vous.map(t=>`<div class="am-col-item"><i class="fa-solid fa-circle-dot" style="color:#D4860B"></i>${t}</div>`).join('')}</div>
+          </div>
+          <div class="am-col" style="border-color:rgba(0,201,167,0.25)">
+            <div class="am-col-title" style="color:var(--cyan)">${agentLabel}</div>
+            <div class="am-col-items">${d.nova.map(t=>`<div class="am-col-item"><i class="fa-solid fa-bolt" style="color:var(--cyan)"></i>${t}</div>`).join('')}</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-section">
+        <div class="am-section-title"><i class="fa-solid fa-chart-bar"></i> Résultats moyens</div>
+        <div class="am-stats">
+          ${d.stats.map(s=>`<div class="am-stat"><div class="am-stat-num" style="background:linear-gradient(135deg,${d.c1},${d.c2});-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${s.num}</div><div class="am-stat-lbl">${s.lbl}</div></div>`).join('')}
+        </div>
+      </div>
+      <div class="am-section">
+        <div class="am-section-title"><i class="fa-solid fa-shield-halved"></i> Confidentialité & RGPD</div>
+        <div class="am-privacy">${d.privacy.map(p=>`<div class="am-privacy-item"><i class="fa-solid fa-check-circle"></i>${p}</div>`).join('')}</div>
+      </div>
+    </div>
+    <div class="am-modal-cta">
+      <button onclick="document.getElementById('agent-modal-overlay').classList.remove('open');document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" class="btn btn-primary btn-glow btn-lg"><i class="fa-solid fa-rocket"></i> Démarrer avec ${d.name}</button>
+    </div>
+  `;
+  overlay.classList.add('open');
+  overlay.scrollTop=0;
+}
+function closeAgentModal(e){if(e.target===document.getElementById('agent-modal-overlay'))document.getElementById('agent-modal-overlay').classList.remove('open')}
 
 // no typewriter — static gradient text
 
