@@ -136,30 +136,27 @@ a{color:inherit;text-decoration:none}
 
 /* ══ PROBLEM ══ */
 #problem{position:relative;overflow:hidden}
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.problem-title{font-family:'Syne',sans-serif;font-size:clamp(26px,3.2vw,44px);font-weight:800;line-height:1.15;margin:16px 0 20px}
-.problem-sub{color:var(--gray);font-size:16px;line-height:1.7;margin-bottom:28px}
-.pain-list{display:flex;flex-direction:column;gap:10px}
-.pain-item{display:flex;gap:14px;align-items:center;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;transition:all .4s;cursor:default}
-.pain-item:hover{background:rgba(247,37,133,0.06);border-color:rgba(247,37,133,0.25);transform:translateX(6px)}
-.pain-ico{width:36px;height:36px;border-radius:10px;background:rgba(247,37,133,0.15);display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:15px;flex-shrink:0;transition:transform .3s}
-.pain-item:hover .pain-ico{transform:scale(1.12) rotate(5deg)}
-.pain-text{min-width:0}
-.pain-text strong{display:block;font-size:13px;font-weight:700;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pain-text span{font-size:12px;color:var(--gray);line-height:1.5}
-/* Problem visual — unified card */
-.problem-visual{border-radius:var(--rl);overflow:hidden;border:1px solid rgba(247,37,133,0.2);box-shadow:0 0 60px rgba(247,37,133,0.06)}
-.problem-loss-header{background:linear-gradient(135deg,rgba(247,37,133,0.18) 0%,rgba(114,9,183,0.14) 100%);padding:28px 32px;border-bottom:1px solid rgba(247,37,133,0.15);display:flex;align-items:center;gap:24px}
-.plh-left{flex:1}
-.plh-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(247,37,133,0.8);margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.plh-num{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;color:var(--pink);line-height:1;text-shadow:0 0 30px rgba(247,37,133,0.35)}
-.plh-sub{font-size:12px;color:var(--gray);margin-top:6px}
-.plh-icon{width:56px;height:56px;border-radius:16px;background:rgba(247,37,133,0.12);border:1px solid rgba(247,37,133,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
-.stat-card{background:var(--bg2);padding:28px 32px;backdrop-filter:blur(10px)}
-.stat-row{display:flex;flex-direction:column;gap:16px}
-.stat-item-header{display:flex;justify-content:space-between;margin-bottom:7px;font-size:13px}
-.stat-bar{height:6px;background:rgba(255,255,255,0.06);border-radius:100px;overflow:hidden}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.problem-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:800;line-height:1.15;margin:16px 0 24px}
+.problem-sub{color:var(--gray);font-size:17px;line-height:1.7;margin-bottom:32px}
+.pain-list{display:flex;flex-direction:column;gap:14px}
+.pain-item{display:flex;gap:16px;align-items:flex-start;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:18px;transition:all .4s;cursor:default}
+.pain-item:hover{background:rgba(247,37,133,0.06);border-color:rgba(247,37,133,0.2);transform:translateX(6px)}
+.pain-ico{width:40px;height:40px;border-radius:10px;background:rgba(247,37,133,0.15);display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:17px;flex-shrink:0;transition:transform .3s}
+.pain-item:hover .pain-ico{transform:scale(1.1) rotate(5deg)}
+.pain-text strong{display:block;font-size:14px;margin-bottom:3px}
+.pain-text span{font-size:13px;color:var(--gray)}
+
+.stat-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rl);padding:32px;backdrop-filter:blur(10px);position:relative;transition:border-color .4s,box-shadow .4s}
+.stat-card:hover{border-color:rgba(247,37,133,0.2);box-shadow:0 20px 60px rgba(247,37,133,0.08)}
+.stat-row{display:flex;flex-direction:column;gap:18px}
+.stat-item-header{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
+.stat-bar{height:8px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden}
 .stat-fill{height:100%;border-radius:100px;width:0;transition:width 2s ease}
+.loss-card{position:absolute;bottom:-28px;right:-24px;background:rgba(247,37,133,0.12);border:1px solid rgba(247,37,133,0.25);border-radius:14px;padding:18px 22px;backdrop-filter:blur(20px);transition:transform .3s}
+.loss-card:hover{transform:scale(1.05) rotate(-1deg) !important}
+.loss-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--pink)}
+.loss-label{font-size:12px;color:var(--gray)}
 
 /* ══ AGENTS ══ */
 #agents{position:relative;overflow:hidden;background:var(--bg2)}
@@ -348,52 +345,6 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
 .payment-secure i{color:var(--cyan);margin-right:4px}
 .payment-plan-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700;background:linear-gradient(90deg,rgba(67,97,238,0.2),rgba(114,9,183,0.2));border:1px solid rgba(67,97,238,0.3);color:#7B9BFF;margin-bottom:12px}
 
-/* ══ AGENT DETAIL MODALS ══ */
-#agent-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(16px);z-index:9997;display:flex;align-items:flex-start;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;overflow-y:auto;padding:40px 16px}
-#agent-modal-overlay.open{opacity:1;pointer-events:all}
-.agent-modal{background:var(--bg2);border:1px solid rgba(255,255,255,0.12);border-radius:var(--rl);max-width:760px;width:100%;position:relative;transform:scale(.96) translateY(24px);transition:transform .35s;box-shadow:0 40px 100px rgba(0,0,0,0.7);overflow:hidden}
-#agent-modal-overlay.open .agent-modal{transform:scale(1) translateY(0)}
-.agent-modal-header{padding:40px 40px 32px;position:relative;background:linear-gradient(135deg,var(--am-c1,#00C9A7) 0%,var(--am-c2,#4361EE) 100%);background-size:200% 200%}
-.agent-modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:none;color:white;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
-.agent-modal-close:hover{background:rgba(255,255,255,0.3)}
-.agent-modal-emoji{font-size:48px;margin-bottom:12px;display:block;line-height:1}
-.agent-modal-name{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:white;margin-bottom:4px}
-.agent-modal-role{font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.06em}
-.agent-modal-body{padding:36px 40px}
-.am-section{margin-bottom:32px}
-.am-section-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.am-section-title i{color:var(--cyan)}
-.am-mission{font-size:16px;color:rgba(255,255,255,0.85);line-height:1.75;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
-.am-sms-bubble{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:18px 20px;position:relative}
-.am-sms-label{font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
-.am-sms-text{background:linear-gradient(135deg,rgba(0,201,167,0.15),rgba(67,97,238,0.15));border:1px solid rgba(0,201,167,0.2);border-radius:12px 12px 12px 4px;padding:14px 16px;font-size:14px;color:rgba(255,255,255,0.9);line-height:1.6;font-style:italic}
-.am-sms-text2{background:linear-gradient(135deg,rgba(67,97,238,0.15),rgba(114,9,183,0.15));border:1px solid rgba(67,97,238,0.2);border-radius:12px 12px 12px 4px;padding:14px 16px;font-size:14px;color:rgba(255,255,255,0.9);line-height:1.6;font-style:italic;margin-top:10px}
-.am-steps{display:flex;flex-direction:column;gap:10px}
-.am-step{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;transition:border-color .3s}
-.am-step:hover{border-color:rgba(0,201,167,0.2)}
-.am-step-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;color:white}
-.am-step-text{font-size:14px;line-height:1.55;color:rgba(255,255,255,0.8)}
-.am-step-text strong{color:white;display:block;margin-bottom:2px;font-size:13px}
-.am-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.am-col{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;padding:18px}
-.am-col-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
-.am-col-items{display:flex;flex-direction:column;gap:8px}
-.am-col-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.75)}
-.am-col-item i{font-size:10px;flex-shrink:0}
-.am-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.am-stat{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
-.am-stat-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1;margin-bottom:4px}
-.am-stat-lbl{font-size:11px;color:var(--gray);line-height:1.4}
-.am-privacy{background:rgba(0,201,167,0.06);border:1px solid rgba(0,201,167,0.15);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
-.am-privacy-item{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.8)}
-.am-privacy-item i{color:var(--cyan);font-size:12px;flex-shrink:0}
-.am-modal-cta{margin-top:8px;padding:24px 40px 36px;border-top:1px solid var(--border);text-align:center}
-/* Discover button on agent cards */
-.agent-discover{display:inline-flex;align-items:center;gap:7px;margin-top:18px;padding:9px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;font-size:13px;font-weight:700;color:var(--white);cursor:pointer;transition:all .3s;font-family:inherit}
-.agent-discover:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2);transform:translateX(4px)}
-.agent-discover i{font-size:11px;transition:transform .3s}
-.agent-discover:hover i{transform:translateX(3px)}
-
 /* ══ RESPONSIVE ══ */
 @media(max-width:900px){
   .hero-inner,.problem-grid,.security-grid{grid-template-columns:1fr}
@@ -429,7 +380,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
       <div class="modal-perk"><i class="fa-solid fa-check"></i> Account manager</div>
       <div class="modal-perk"><i class="fa-solid fa-check"></i> Accès Agent 4 beta</div>
     </div>
-    <form id="contact-form" action="https://formspree.io/f/xojyblwv" method="POST" onsubmit="handleSubmit(event)">
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
       <input type="hidden" name="_subject" value="Demande Cabinet+ — PraticIA"/>
       <div class="form-grid">
         <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" required placeholder="Marie"/></div>
@@ -473,13 +424,6 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
       <button onclick="closePaymentModalBtn()" class="btn btn-outline">Annuler</button>
     </div>
     <div class="payment-secure"><i class="fa-solid fa-shield"></i> Paiement sécurisé Stripe · Sans engagement · Annulable à tout moment</div>
-  </div>
-</div>
-
-<!-- ══ AGENT DETAIL MODAL ══ -->
-<div id="agent-modal-overlay" onclick="closeAgentModal(event)">
-  <div class="agent-modal" id="agent-modal-inner">
-    <!-- Header populated by JS -->
   </div>
 </div>
 
@@ -609,32 +553,21 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
         <div class="pain-list">
           <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-user-slash"></i></div><div class="pain-text"><strong>30 à 40% de patients ne reviennent jamais</strong><span>Après un soin, la majorité ne reprend pas spontanément rendez-vous.</span></div></div>
           <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-star-half-stroke"></i></div><div class="pain-text"><strong>Votre cabinet est invisible sur Google</strong><span>Un cabinet avec 12 avis perd face à un concurrent avec 200, même s'il est meilleur.</span></div></div>
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="pain-text"><strong>Les annulations restent non comblées</strong><span>Un patient annule → personne ne rappelle la liste d'attente → argent perdu.</span></div></div>
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-comment-slash"></i></div><div class="pain-text"><strong>Aucun suivi après les soins</strong><span>Après une extraction ou une opération — silence radio. Le patient se sent abandonné.</span></div></div>
+          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="pain-text"><strong>Les créneaux annulés restent vides</strong><span>Un patient annule → personne ne rappelle la liste d'attente → argent perdu.</span></div></div>
+          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-comment-slash"></i></div><div class="pain-text"><strong>Zéro suivi post-traitement</strong><span>Après une extraction ou une opération — silence radio. Le patient se sent abandonné.</span></div></div>
         </div>
       </div>
-      <div class="problem-visual reveal">
-        <div class="problem-loss-header">
-          <div class="plh-left">
-            <div class="plh-tag"><i class="fa-solid fa-triangle-exclamation"></i> Coût de l'inaction</div>
-            <div class="plh-num">-1 200€</div>
-            <div class="plh-sub">perdus par mois · cabinet de 200 consultations</div>
-          </div>
-          <div class="plh-icon">💸</div>
-        </div>
+      <div class="stats-visual reveal" style="position:relative">
         <div class="stat-card">
-          <p style="font-size:11px;color:var(--gray);margin-bottom:18px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Situation moyenne sans PraticIA</p>
+          <p style="font-size:13px;color:var(--gray);margin-bottom:22px;font-weight:700;text-transform:uppercase;letter-spacing:.05em">Sans PraticIA — Cabinet type</p>
           <div class="stat-row">
-            <div class="stat-item"><div class="stat-item-header"><span>Patients qui reviennent spontanément</span><span style="color:var(--pink);font-weight:700">62%</span></div><div class="stat-bar"><div class="stat-fill" data-width="62" style="background:linear-gradient(90deg,rgba(247,37,133,0.7),rgba(247,37,133,0.3))"></div></div></div>
-            <div class="stat-item"><div class="stat-item-header"><span>Patients qui laissent un avis Google</span><span style="color:var(--pink);font-weight:700">4%</span></div><div class="stat-bar"><div class="stat-fill" data-width="4" style="background:linear-gradient(90deg,rgba(247,37,133,0.7),rgba(247,37,133,0.3))"></div></div></div>
-            <div class="stat-item"><div class="stat-item-header"><span>Remplissage après annulation</span><span style="color:var(--pink);font-weight:700">41%</span></div><div class="stat-bar"><div class="stat-fill" data-width="41" style="background:linear-gradient(90deg,rgba(247,37,133,0.7),rgba(247,37,133,0.3))"></div></div></div>
-            <div class="stat-item"><div class="stat-item-header"><span>Patients avec suivi post-soin</span><span style="color:var(--pink);font-weight:700">8%</span></div><div class="stat-bar"><div class="stat-fill" data-width="8" style="background:linear-gradient(90deg,rgba(247,37,133,0.7),rgba(247,37,133,0.3))"></div></div></div>
-          </div>
-          <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px">
-            <i class="fa-solid fa-circle-info" style="color:var(--cyan);font-size:13px"></i>
-            <span style="font-size:12px;color:var(--gray)">PraticIA corrige chacun de ces 4 points automatiquement.</span>
+            <div class="stat-item"><div class="stat-item-header"><span>Patients qui reviennent spontanément</span><span style="color:var(--pink)">62%</span></div><div class="stat-bar"><div class="stat-fill" data-width="62" style="background:rgba(247,37,133,0.5)"></div></div></div>
+            <div class="stat-item"><div class="stat-item-header"><span>Patients qui laissent un avis Google</span><span style="color:var(--pink)">4%</span></div><div class="stat-bar"><div class="stat-fill" data-width="4" style="background:rgba(247,37,133,0.5)"></div></div></div>
+            <div class="stat-item"><div class="stat-item-header"><span>Remplissage après annulation</span><span style="color:var(--pink)">41%</span></div><div class="stat-bar"><div class="stat-fill" data-width="41" style="background:rgba(247,37,133,0.5)"></div></div></div>
+            <div class="stat-item"><div class="stat-item-header"><span>Patients avec suivi post-soin</span><span style="color:var(--pink)">8%</span></div><div class="stat-bar"><div class="stat-fill" data-width="8" style="background:rgba(247,37,133,0.5)"></div></div></div>
           </div>
         </div>
+        <div class="loss-card"><div class="loss-num">-1 200€</div><div class="loss-label">perdus/mois en moyenne<br>sur 200 consultations</div></div>
       </div>
     </div>
   </div>
@@ -666,7 +599,6 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
             <div class="agent-stat-num" style="color:var(--cyan)">+18</div>
             <div class="agent-stat-lbl">nouveaux avis Google par mois</div>
           </div>
-          <button class="agent-discover" onclick="openAgentModal('nova')">Découvrir en détail <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
       <div class="agent-card reveal" style="--c1:#4361EE;--c2:#7209B7">
@@ -674,18 +606,17 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
           <div class="agent-avatar" style="background:rgba(67,97,238,0.12)">💚</div>
           <div class="agent-name">Echo</div>
           <div class="agent-role">Agent Rétention Patient</div>
-          <div class="agent-desc">Echo analyse chaque matin votre liste patients et identifie ceux inactifs depuis 6 mois. Il leur envoie un SMS chaleureux et personnalisé pour les inciter à reprendre RDV.</div>
+          <div class="agent-desc">Echo envoie un SMS chaleureux et personnalisé aux patients que vous identifiez comme inactifs depuis plus de 6 mois. Activé selon le souhait de chaque cabinet, sans rien imposer.</div>
           <div class="agent-features">
             <div class="agent-feature"><i class="fa-solid fa-check"></i> Détection automatique des inactifs</div>
-            <div class="agent-feature"><i class="fa-solid fa-check"></i> Message adapté au type de soin</div>
-            <div class="agent-feature"><i class="fa-solid fa-check"></i> Relance J+7 si pas de réponse</div>
+            <div class="agent-feature"><i class="fa-solid fa-check"></i> Message personnalisé par praticien</div>
+            <div class="agent-feature"><i class="fa-solid fa-check"></i> Activation optionnelle par cabinet</div>
             <div class="agent-feature"><i class="fa-solid fa-check"></i> Respect du droit d'opposition (STOP)</div>
           </div>
           <div class="agent-stat">
             <div class="agent-stat-num" style="color:var(--blue)">23%</div>
             <div class="agent-stat-lbl">des patients relancés reprennent RDV</div>
           </div>
-          <button class="agent-discover" onclick="openAgentModal('echo')">Découvrir en détail <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
       <div class="agent-card reveal" style="--c1:#7209B7;--c2:#F72585">
@@ -693,9 +624,9 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
           <div class="agent-avatar" style="background:rgba(114,9,183,0.12)">🛡️</div>
           <div class="agent-name">Aria</div>
           <div class="agent-role">Agent Suivi Post-Traitement</div>
-          <div class="agent-desc">Aria prend soin de vos patients après chaque traitement. Message à J+1 et J+7, collecte les retours, et alerte immédiatement le praticien si un patient signale un problème.</div>
+          <div class="agent-desc">Aria prend soin de vos patients après chaque traitement. Email à 48h et J+7, collecte les retours, et alerte immédiatement le praticien si un patient signale un problème.</div>
           <div class="agent-features">
-            <div class="agent-feature"><i class="fa-solid fa-check"></i> Suivi SMS J+1 et J+7 automatiques</div>
+            <div class="agent-feature"><i class="fa-solid fa-check"></i> Suivi par email 48h et J+7 automatiques</div>
             <div class="agent-feature"><i class="fa-solid fa-check"></i> Adapté par type de soin</div>
             <div class="agent-feature"><i class="fa-solid fa-check"></i> Détection des mots-clés d'alerte</div>
             <div class="agent-feature"><i class="fa-solid fa-check"></i> Notification immédiate au praticien</div>
@@ -704,7 +635,6 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
             <div class="agent-stat-num" style="color:var(--pink)">100%</div>
             <div class="agent-stat-lbl">des patients suivis après chaque soin</div>
           </div>
-          <button class="agent-discover" onclick="openAgentModal('aria')">Découvrir en détail <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -827,7 +757,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
           <div class="price-feature off"><i class="fa-solid fa-times"></i> Agent Aria (Suivi post-soin)</div>
         </div>
         <button onclick="openPaymentModal('https://buy.stripe.com/3cI6oH8WI7Rj9lo0xIcEw00','Plan Starter · 99€/mois')" class="btn btn-starter btn-lg price-cta"><i class="fa-solid fa-credit-card"></i> Souscrire — 99€/mois</button>
-        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="mailto:pratic.iaoff@gmail.com?subject=Essai%20gratuit%20Starter%20%E2%80%94%20PraticIA&body=Bonjour%2C%0A%0AJe%20souhaite%20b%C3%A9n%C3%A9ficier%20de%20l%27essai%20gratuit%207%20jours%20pour%20le%20plan%20Starter.%0A%0AMon%20cabinet%20%3A%0AMa%20sp%C3%A9cialit%C3%A9%20%3A%0A%0AMerci%20!" style="color:var(--cyan)">Nous contacter</a></div>
+        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="mailto:pratic.ia@outlook.fr?subject=Essai%20gratuit%20Starter%20%E2%80%94%20PraticIA&body=Bonjour%2C%0A%0AJe%20souhaite%20b%C3%A9n%C3%A9ficier%20de%20l%27essai%20gratuit%207%20jours%20pour%20le%20plan%20Starter.%0A%0AMon%20cabinet%20%3A%0AMa%20sp%C3%A9cialit%C3%A9%20%3A%0A%0AMerci%20!" style="color:var(--cyan)">Nous contacter</a></div>
       </div>
 
       <!-- Pro -->
@@ -850,7 +780,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
           <div class="price-feature"><i class="fa-solid fa-check"></i> Support prioritaire 7j/7</div>
         </div>
         <button onclick="openPaymentModal('https://buy.stripe.com/5kQ7sL2yk5JbgNQbcmcEw01','Plan Pro · 199€/mois')" class="btn btn-primary btn-lg price-cta btn-glow"><i class="fa-solid fa-credit-card"></i> Souscrire — 199€/mois</button>
-        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="mailto:pratic.iaoff@gmail.com?subject=Essai%20gratuit%20Pro%20%E2%80%94%20PraticIA&body=Bonjour%2C%0A%0AJe%20souhaite%20b%C3%A9n%C3%A9ficier%20de%20l%27essai%20gratuit%207%20jours%20pour%20le%20plan%20Pro.%0A%0AMon%20cabinet%20%3A%0AMa%20sp%C3%A9cialit%C3%A9%20%3A%0A%0AMerci%20!" style="color:var(--cyan)">Nous contacter</a></div>
+        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="mailto:pratic.ia@outlook.fr?subject=Essai%20gratuit%20Pro%20%E2%80%94%20PraticIA&body=Bonjour%2C%0A%0AJe%20souhaite%20b%C3%A9n%C3%A9ficier%20de%20l%27essai%20gratuit%207%20jours%20pour%20le%20plan%20Pro.%0A%0AMon%20cabinet%20%3A%0AMa%20sp%C3%A9cialit%C3%A9%20%3A%0A%0AMerci%20!" style="color:var(--cyan)">Nous contacter</a></div>
       </div>
 
       <!-- Cabinet+ -->
@@ -930,7 +860,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
       </div>
       <div class="footer-col"><h4>Produit</h4><ul><li><a href="#agents">Nos agents IA</a></li><li><a href="#how">Comment ça marche</a></li><li><a href="#integrations">Intégrations</a></li><li><a href="#pricing">Tarifs</a></li></ul></div>
       <div class="footer-col"><h4>Spécialités</h4><ul><li><a href="#">Cabinets dentaires</a></li><li><a href="#">Kinésithérapeutes</a></li><li><a href="#">Médecins généralistes</a></li><li><a href="#">Spécialistes</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:pratic.iaoff@gmail.com?subject=Questions%20%E2%80%94%20PraticIA">pratic.iaoff@gmail.com</a></li><li><a href="#faq">FAQ</a></li><li><a href="politique-confidentialite.html">RGPD</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgv.html">CGV</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:pratic.ia@outlook.fr?subject=Questions%20%E2%80%94%20PraticIA">pratic.ia@outlook.fr</a></li><li><a href="#faq">FAQ</a></li><li><a href="politique-confidentialite.html">RGPD</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgv.html">CGV</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 PraticIA. Tous droits réservés.</div>
@@ -1072,20 +1002,25 @@ function handleSubmit(e){
   e.preventDefault();
   const form=document.getElementById('contact-form');
   const data=new FormData(form);
-  fetch('https://formspree.io/f/xojyblwv',{
-    method:'POST',
-    body:data,
-    headers:{'Accept':'application/json'}
-  }).then(r=>{
-    if(r.ok){
-      form.style.display='none';
-      document.getElementById('form-success').style.display='block';
-    } else {
-      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter à pratic.iaoff@gmail.com');
-    }
-  }).catch(()=>{
-    alert('Une erreur est survenue. Veuillez réessayer ou nous contacter à pratic.iaoff@gmail.com');
-  });
+  const prenom=data.get('prenom')||'';
+  const nom=data.get('nom')||'';
+  const email=data.get('email')||'';
+  const specialite=data.get('specialite')||'';
+  const praticiens=data.get('praticiens')||'';
+  const message=data.get('message')||'';
+  const subject=encodeURIComponent('Demande Cabinet+ — '+prenom+' '+nom+' | PraticIA');
+  const body=encodeURIComponent(
+    'Nouvelle demande Cabinet+ depuis le site PraticIA\n\n'+
+    'Prénom : '+prenom+'\n'+
+    'Nom : '+nom+'\n'+
+    'Email : '+email+'\n'+
+    'Spécialité : '+specialite+'\n'+
+    'Nombre de praticiens : '+praticiens+'\n'+
+    'Message : '+message
+  );
+  window.open('mailto:quentinmalabave@gmail.com?subject='+subject+'&body='+body,'_blank');
+  form.style.display='none';
+  document.getElementById('form-success').style.display='block';
 }
 
 // ── Payment confirmation modal ───────────────────────────────
@@ -1102,138 +1037,6 @@ function confirmPayment(){
 function closePaymentModalBtn(){document.getElementById('payment-modal-overlay').classList.remove('open')}
 function closePaymentModal(e){if(e.target===document.getElementById('payment-modal-overlay'))closePaymentModalBtn()}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePaymentModalBtn();closeModalBtn()}});
-
-// ── Agent Detail Modals ──────────────────────────────────────
-const agentData = {
-  nova: {
-    emoji:'⭐', name:'Nova', role:'Agent Avis Google',
-    c1:'#00C9A7', c2:'#4361EE',
-    mission:'Nova surveille votre Google Sheet toutes les 15 minutes. Dès qu\'un nouveau patient est ajouté avec son prénom et son téléphone, elle lui envoie automatiquement un SMS personnalisé pour l\'inviter à laisser un avis sur votre fiche Google.',
-    sms:[{label:'SMS envoyé au patient', text:'"Bonjour Marie, merci pour votre consultation chez le Dr Dupont. Un avis Google nous aiderait vraiment : https://g.page/r/... Merci et bonne journée !"'}],
-    steps:[
-      {title:'La secrétaire saisit les données', desc:'Prénom, nom et numéro de téléphone du patient dans le Google Sheet après chaque consultation — 10 secondes de travail.'},
-      {title:'Nova scanne toutes les 15 minutes', desc:'Elle vérifie automatiquement si de nouvelles lignes sont apparues et si le SMS n\'a pas encore été envoyé.'},
-      {title:'Envoi du SMS personnalisé', desc:'Le message inclut le prénom du patient et le nom du médecin. Le lien Google Review est directement intégré.'},
-      {title:'Marquage anti-doublon', desc:'Nova marque immédiatement la ligne "envoyé". Ce patient ne recevra jamais un deuxième SMS — zéro spam garanti.'},
-      {title:'C\'est tout', desc:'Aucune autre action requise de votre part. Nova tourne 24h/24 sans intervention.'},
-    ],
-    vous:['Saisir prénom + téléphone dans le Sheet','Rien d\'autre — vraiment'],
-    nova:['Scanner le Sheet toutes les 15 min','Envoyer le SMS personnalisé','Marquer la ligne comme traitée','Éviter tout doublon'],
-    stats:[{num:'+18',lbl:'avis Google par mois en moyenne'},{num:'98%',lbl:'taux de délivrabilité SMS'},{num:'24/7',lbl:'tourne sans intervention humaine'}],
-    privacy:['Seuls le prénom et le téléphone transitent','Aucune donnée médicale n\'est jamais transmise','Conforme RGPD — aucun stockage externe','Les données restent dans votre Google Drive']
-  },
-  echo: {
-    emoji:'💚', name:'Echo', role:'Agent Rétention Patient',
-    c1:'#4361EE', c2:'#7209B7',
-    mission:'Echo analyse chaque matin la liste de vos patients et identifie ceux qui ne sont pas revenus depuis 6 mois ou plus. Il leur envoie un SMS chaleureux et personnalisé pour les inviter à reprendre rendez-vous — au bon moment, avec le bon message.',
-    sms:[
-      {label:'SMS de relance', text:'"Bonjour Thomas, cela fait quelques mois que nous ne vous avons pas vu au cabinet du Dr Martin. N\'hésitez pas à nous appeler pour un rendez-vous. À bientôt !"'},
-      {label:'Relance J+7 si pas de réponse', text:'"Bonjour Thomas, nous voulions juste vous rappeler que le cabinet du Dr Martin reste disponible pour vous. Bonne journée !"'}
-    ],
-    steps:[
-      {title:'Votre liste patients dans le Sheet', desc:'Prénom, téléphone, date de dernière visite. Peut être exporté depuis votre logiciel médical.'},
-      {title:'Scan quotidien chaque matin', desc:'Echo parcourt chaque ligne et calcule l\'ancienneté depuis la dernière visite.'},
-      {title:'Détection des inactifs', desc:'Patients sans visite depuis 6+ mois — seuil ajustable selon votre spécialité.'},
-      {title:'Envoi du SMS de relance', desc:'Message chaleureux adapté à votre ton et votre spécialité. Le patient ne perçoit pas d\'automatisme.'},
-      {title:'Relance J+7 et respect du STOP', desc:'Si pas de réaction, une deuxième relance à J+7. Le droit d\'opposition (répondre STOP) est respecté automatiquement.'},
-    ],
-    vous:['Tenir la liste patients à jour','Configurer le seuil d\'inactivité (6 mois par défaut)'],
-    nova:['Détecter les patients inactifs chaque matin','Envoyer les SMS de relance personnalisés','Gérer la relance J+7','Respecter le droit STOP automatiquement'],
-    stats:[{num:'23%',lbl:'patients relancés reprennent RDV'},{num:'+11',lbl:'RDV récupérés/mois (200 patients)'},{num:'6 mois',lbl:'seuil d\'inactivité (configurable)'}],
-    privacy:['Seuls prénom et téléphone transmis','Aucune donnée médicale ou de diagnostic','Droit d\'opposition STOP intégré','Conforme RGPD — données dans votre Drive']
-  },
-  aria: {
-    emoji:'🛡️', name:'Aria', role:'Agent Suivi Post-Traitement',
-    c1:'#7209B7', c2:'#F72585',
-    mission:'Aria prend soin de vos patients après chaque traitement. Elle envoie un SMS de suivi à J+1 puis à J+7, collecte les retours, et alerte immédiatement le praticien si un patient signale un problème ou une douleur.',
-    sms:[
-      {label:'SMS J+1 (lendemain du soin)', text:'"Bonjour Marie, comment vous sentez-vous aujourd\'hui après votre soin chez le Dr Dupont ? Tout se passe bien ? N\'hésitez pas à nous répondre si vous avez une question."'},
-      {label:'SMS J+7 (une semaine après)', text:'"Bonjour Marie, une semaine après votre traitement, nous espérons que tout va bien. Si vous souhaitez faire un point ou prendre RDV, nous sommes là."'}
-    ],
-    steps:[
-      {title:'Note du type de soin dans le Sheet', desc:'La secrétaire indique le type de traitement et la date dans le Google Sheet après la consultation.'},
-      {title:'Aria calcule J+1 et J+7', desc:'Automatiquement, elle programme les envois pour le lendemain et 7 jours après.'},
-      {title:'Envoi du SMS J+1', desc:'Message de suivi bienveillant pour prendre des nouvelles. Personnalisé avec le nom du patient et du praticien.'},
-      {title:'Envoi du SMS J+7', desc:'Deuxième point de suivi une semaine après. Invite à reprendre contact si besoin.'},
-      {title:'Détection et alerte', desc:'Si le patient répond avec un mot-clé d\'alerte (douleur, problème, urgence…), un email est envoyé immédiatement au praticien.'},
-    ],
-    vous:['Indiquer le type de soin et la date dans le Sheet','Traiter les alertes si un patient signale un problème'],
-    nova:['Calculer J+1 et J+7 automatiquement','Envoyer les SMS de suivi','Détecter les mots-clés d\'alerte','Notifier immédiatement le praticien'],
-    stats:[{num:'100%',lbl:'patients suivis après chaque soin'},{num:'J+1/J+7',lbl:'deux points de contact automatiques'},{num:'0',lbl:'patients abandonnés sans suivi'}],
-    privacy:['Seuls prénom, téléphone et type de soin transmis','Aucune donnée médicale détaillée','Les réponses patients restent dans votre Sheet','Conforme RGPD']
-  }
-};
-
-function openAgentModal(id){
-  const d=agentData[id];
-  const overlay=document.getElementById('agent-modal-overlay');
-  const inner=document.getElementById('agent-modal-inner');
-  const youLabel=id==='nova'?'Ce que VOUS faites':'Ce que VOUS faites';
-  const agentLabel='Ce que '+d.name.toUpperCase()+' fait automatiquement';
-  inner.innerHTML=`
-    <div class="agent-modal-header" style="--am-c1:${d.c1};--am-c2:${d.c2};background:linear-gradient(135deg,${d.c1},${d.c2})">
-      <button class="agent-modal-close" onclick="document.getElementById('agent-modal-overlay').classList.remove('open')"><i class="fa-solid fa-xmark"></i></button>
-      <span class="agent-modal-emoji">${d.emoji}</span>
-      <div class="agent-modal-name">${d.name}</div>
-      <div class="agent-modal-role">${d.role}</div>
-    </div>
-    <div class="agent-modal-body">
-      <div class="am-section">
-        <div class="am-section-title"><i class="fa-solid fa-bullseye"></i> Sa mission</div>
-        <div class="am-mission">${d.mission}</div>
-      </div>
-      <div class="am-section">
-        <div class="am-section-title"><i class="fa-solid fa-mobile-screen"></i> Exemple de SMS envoyé</div>
-        <div class="am-sms-bubble">
-          ${d.sms.map((s,i)=>`<div class="am-sms-label">${s.label}</div><div class="${i>0?'am-sms-text2':'am-sms-text'}">${s.text}</div>`).join('')}
-        </div>
-      </div>
-      <div class="am-section">
-        <div class="am-section-title"><i class="fa-solid fa-gears"></i> Comment ça marche — étape par étape</div>
-        <div class="am-steps">
-          ${d.steps.map((s,i)=>`<div class="am-step"><div class="am-step-num">${i+1}</div><div class="am-step-text"><strong>${s.title}</strong>${s.desc}</div></div>`).join('')}
-        </div>
-      </div>
-      <div class="am-section">
-        <div class="am-section-title"><i class="fa-solid fa-scale-balanced"></i> Répartition des tâches</div>
-        <div class="am-cols">
-          <div class="am-col" style="border-color:rgba(212,134,11,0.25)">
-            <div class="am-col-title" style="color:#D4860B">${youLabel}</div>
-            <div class="am-col-items">
-              ${d.vous.map(t=>`<div class="am-col-item"><i class="fa-solid fa-circle-dot" style="color:#D4860B"></i>${t}</div>`).join('')}
-            </div>
-          </div>
-          <div class="am-col" style="border-color:rgba(0,201,167,0.25)">
-            <div class="am-col-title" style="color:var(--cyan)">${agentLabel}</div>
-            <div class="am-col-items">
-              ${d.nova.map(t=>`<div class="am-col-item"><i class="fa-solid fa-bolt" style="color:var(--cyan)"></i>${t}</div>`).join('')}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="am-section">
-        <div class="am-section-title"><i class="fa-solid fa-chart-bar"></i> Résultats moyens</div>
-        <div class="am-stats">
-          ${d.stats.map(s=>`<div class="am-stat"><div class="am-stat-num" style="background:linear-gradient(135deg,${d.c1},${d.c2});-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${s.num}</div><div class="am-stat-lbl">${s.lbl}</div></div>`).join('')}
-        </div>
-      </div>
-      <div class="am-section">
-        <div class="am-section-title"><i class="fa-solid fa-shield-halved"></i> Confidentialité & RGPD</div>
-        <div class="am-privacy">
-          ${d.privacy.map(p=>`<div class="am-privacy-item"><i class="fa-solid fa-check-circle"></i>${p}</div>`).join('')}
-        </div>
-      </div>
-    </div>
-    <div class="am-modal-cta">
-      <button onclick="document.getElementById('agent-modal-overlay').classList.remove('open');document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" class="btn btn-primary btn-glow btn-lg"><i class="fa-solid fa-rocket"></i> Démarrer avec ${d.name}</button>
-    </div>
-  `;
-  overlay.classList.add('open');
-  overlay.scrollTop=0;
-}
-function closeAgentModal(e){if(e.target===document.getElementById('agent-modal-overlay'))document.getElementById('agent-modal-overlay').classList.remove('open')}
-// Close on Escape (add to existing keydown)
-document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('agent-modal-overlay').classList.remove('open')});
 
 // no typewriter — static gradient text
 
