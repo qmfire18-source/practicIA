@@ -1117,25 +1117,12 @@ function handleSubmit(e){
   e.preventDefault();
   const form=document.getElementById('contact-form');
   const data=new FormData(form);
-  const prenom=data.get('prenom')||'';
-  const nom=data.get('nom')||'';
-  const email=data.get('email')||'';
-  const specialite=data.get('specialite')||'';
-  const praticiens=data.get('praticiens')||'';
-  const message=data.get('message')||'';
-  const subject=encodeURIComponent('Demande Cabinet+ — '+prenom+' '+nom+' | PraticIA');
-  const body=encodeURIComponent(
-    'Nouvelle demande Cabinet+ depuis le site PraticIA\n\n'+
-    'Prénom : '+prenom+'\n'+
-    'Nom : '+nom+'\n'+
-    'Email : '+email+'\n'+
-    'Spécialité : '+specialite+'\n'+
-    'Nombre de praticiens : '+praticiens+'\n'+
-    'Message : '+message
-  );
-  window.open('mailto:quentinmalabave@gmail.com?subject='+subject+'&body='+body,'_blank');
-  form.style.display='none';
-  document.getElementById('form-success').style.display='block';
+  data.append('_subject','Demande Cabinet+ — PraticIA');
+  fetch('https://formspree.io/f/xojyblwv',{method:'POST',body:data,headers:{Accept:'application/json'}})
+    .then(r=>{
+      if(r.ok){form.style.display='none';document.getElementById('form-success').style.display='block';}
+      else{alert('Erreur envoi, réessayez.');}
+    }).catch(()=>alert('Erreur réseau, réessayez.'));
 }
 
 // ── Payment confirmation modal ───────────────────────────────
@@ -1168,15 +1155,14 @@ function closeTrialModalBtn(){document.getElementById('trial-modal-overlay').cla
 function closeTrialModal(e){if(e.target===document.getElementById('trial-modal-overlay'))closeTrialModalBtn()}
 function handleTrialSubmit(e){
   e.preventDefault();
-  const data=new FormData(document.getElementById('trial-form'));
-  const prenom=data.get('prenom')||'';const nom=data.get('nom')||'';
-  const email=data.get('email')||'';const tel=data.get('tel')||'';
-  const specialite=data.get('specialite')||'';const plan=data.get('_plan')||'';
-  const subject=encodeURIComponent('Essai gratuit '+plan+' — '+prenom+' '+nom+' | PraticIA');
-  const body=encodeURIComponent('Demande essai gratuit 7 jours\n\nPlan : '+plan+'\nPrénom : '+prenom+'\nNom : '+nom+'\nEmail : '+email+'\nTéléphone : '+tel+'\nSpécialité : '+specialite);
-  window.open('mailto:quentinmalabave@gmail.com?subject='+subject+'&body='+body,'_blank');
-  document.getElementById('trial-form').style.display='none';
-  document.getElementById('trial-success').style.display='block';
+  const form=document.getElementById('trial-form');
+  const data=new FormData(form);
+  data.append('_subject','Essai gratuit '+data.get('_plan')+' — PraticIA');
+  fetch('https://formspree.io/f/xojyblwv',{method:'POST',body:data,headers:{Accept:'application/json'}})
+    .then(r=>{
+      if(r.ok){form.style.display='none';document.getElementById('trial-success').style.display='block';}
+      else{alert('Erreur envoi, réessayez.');}
+    }).catch(()=>alert('Erreur réseau, réessayez.'));
 }
 
 // ── Team Modal (Parler à l'équipe) ───────────────────────────
@@ -1189,15 +1175,14 @@ function closeTeamModalBtn(){document.getElementById('team-modal-overlay').class
 function closeTeamModal(e){if(e.target===document.getElementById('team-modal-overlay'))closeTeamModalBtn()}
 function handleTeamSubmit(e){
   e.preventDefault();
-  const data=new FormData(document.getElementById('team-form'));
-  const prenom=data.get('prenom')||'';const nom=data.get('nom')||'';
-  const email=data.get('email')||'';const tel=data.get('tel')||'';
-  const message=data.get('message')||'';
-  const subject=encodeURIComponent('Contact équipe — '+prenom+' '+nom+' | PraticIA');
-  const body=encodeURIComponent('Prise de contact depuis le site PraticIA\n\nPrénom : '+prenom+'\nNom : '+nom+'\nEmail : '+email+'\nTéléphone : '+tel+'\nMessage : '+message);
-  window.open('mailto:quentinmalabave@gmail.com?subject='+subject+'&body='+body,'_blank');
-  document.getElementById('team-form').style.display='none';
-  document.getElementById('team-success').style.display='block';
+  const form=document.getElementById('team-form');
+  const data=new FormData(form);
+  data.append('_subject','Parler à l\'équipe — PraticIA');
+  fetch('https://formspree.io/f/xojyblwv',{method:'POST',body:data,headers:{Accept:'application/json'}})
+    .then(r=>{
+      if(r.ok){form.style.display='none';document.getElementById('team-success').style.display='block';}
+      else{alert('Erreur envoi, réessayez.');}
+    }).catch(()=>alert('Erreur réseau, réessayez.'));
 }
 
 // ── Agent Detail Modals ──────────────────────────────────────
