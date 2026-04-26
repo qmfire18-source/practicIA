@@ -476,6 +476,71 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
   </div>
 </div>
 
+<!-- ══ ESSAI GRATUIT MODAL ══ -->
+<div id="trial-modal-overlay" onclick="closeTrialModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeTrialModalBtn()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-title">Essai gratuit <span class="gradient-text">7 jours</span></div>
+    <div class="modal-sub" id="trial-modal-sub">Remplissez ce formulaire — on vous contacte sous 24h pour lancer votre essai, sans engagement, sans carte bancaire.</div>
+    <div class="modal-perks">
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> 7 jours sans engagement</div>
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> Sans carte bancaire</div>
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> Installation incluse</div>
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> Résultats dès J+2</div>
+    </div>
+    <form id="trial-form" onsubmit="handleTrialSubmit(event)">
+      <input type="hidden" name="_subject" id="trial-subject" value="Essai gratuit — PraticIA"/>
+      <input type="hidden" name="formulaire" id="trial-plan-hidden" value="Essai gratuit"/>
+      <div class="form-grid">
+        <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" required placeholder="Marie"/></div>
+        <div class="form-group"><label>Nom *</label><input type="text" name="nom" required placeholder="Dupont"/></div>
+      </div>
+      <div class="form-group"><label>Email professionnel *</label><input type="email" name="email" required placeholder="contact@cabinet.fr"/></div>
+      <div class="form-group"><label>Spécialité *</label>
+        <select name="specialite" required>
+          <option value="">Choisir...</option>
+          <option>Chirurgien-dentiste</option>
+          <option>Kinésithérapeute</option>
+          <option>Médecin généraliste</option>
+          <option>Spécialiste</option>
+          <option>Cabinet pluridisciplinaire</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message (optionnel)</label><textarea name="message" rows="2" placeholder="Des questions avant de commencer ?"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-lg form-submit"><i class="fa-solid fa-paper-plane"></i> Démarrer mon essai gratuit</button>
+    </form>
+    <div class="form-success" id="trial-success"><i class="fa-solid fa-circle-check" style="font-size:24px;margin-bottom:12px;display:block"></i>Demande envoyée ! On vous contacte sous 24h pour lancer votre essai.</div>
+  </div>
+</div>
+
+<!-- ══ PARLER À L'ÉQUIPE MODAL ══ -->
+<div id="team-modal-overlay" onclick="closeTeamModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeTeamModalBtn()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-title">Parler à <span class="gradient-text">l'équipe</span></div>
+    <div class="modal-sub">Une question ? On vous répond personnellement sous 24h — sans engagement, sans discours commercial.</div>
+    <div class="modal-perks">
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> Réponse sous 24h</div>
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> Conseils gratuits</div>
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> Sans engagement</div>
+      <div class="modal-perk"><i class="fa-solid fa-check"></i> Humain, pas un bot</div>
+    </div>
+    <form id="team-form" onsubmit="handleTeamSubmit(event)">
+      <input type="hidden" name="_subject" value="Contact équipe — PraticIA"/>
+      <input type="hidden" name="formulaire" value="Parler à l'équipe"/>
+      <div class="form-grid">
+        <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" required placeholder="Marie"/></div>
+        <div class="form-group"><label>Nom *</label><input type="text" name="nom" required placeholder="Dupont"/></div>
+      </div>
+      <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="contact@cabinet.fr"/></div>
+      <div class="form-group"><label>Votre question *</label><textarea name="message" rows="3" required placeholder="Posez-nous n'importe quelle question sur PraticIA..."></textarea></div>
+      <button type="submit" class="btn btn-primary btn-lg form-submit"><i class="fa-solid fa-paper-plane"></i> Envoyer ma question</button>
+    </form>
+    <div class="form-success" id="team-success"><i class="fa-solid fa-circle-check" style="font-size:24px;margin-bottom:12px;display:block"></i>Message reçu ! On vous répond sous 24h.</div>
+  </div>
+</div>
+
 <!-- ══ AGENT DETAIL MODAL ══ -->
 <div id="agent-modal-overlay" onclick="closeAgentModal(event)">
   <div class="agent-modal" id="agent-modal-inner">
@@ -827,7 +892,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
           <div class="price-feature off"><i class="fa-solid fa-times"></i> Agent Aria (Suivi post-soin)</div>
         </div>
         <button onclick="openPaymentModal('https://buy.stripe.com/3cI6oH8WI7Rj9lo0xIcEw00','Plan Starter · 99€/mois')" class="btn btn-starter btn-lg price-cta"><i class="fa-solid fa-credit-card"></i> Souscrire — 99€/mois</button>
-        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="mailto:pratic.iaoff@gmail.com?subject=Essai%20gratuit%20Starter%20%E2%80%94%20PraticIA&body=Bonjour%2C%0A%0AJe%20souhaite%20b%C3%A9n%C3%A9ficier%20de%20l%27essai%20gratuit%207%20jours%20pour%20le%20plan%20Starter.%0A%0AMon%20cabinet%20%3A%0AMa%20sp%C3%A9cialit%C3%A9%20%3A%0A%0AMerci%20!" style="color:var(--cyan)">Nous contacter</a></div>
+        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="#" onclick="openTrialModal('Starter');return false;" style="color:var(--cyan)">Nous contacter</a></div>
       </div>
 
       <!-- Pro -->
@@ -850,7 +915,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
           <div class="price-feature"><i class="fa-solid fa-check"></i> Support prioritaire 7j/7</div>
         </div>
         <button onclick="openPaymentModal('https://buy.stripe.com/5kQ7sL2yk5JbgNQbcmcEw01','Plan Pro · 199€/mois')" class="btn btn-primary btn-lg price-cta btn-glow"><i class="fa-solid fa-credit-card"></i> Souscrire — 199€/mois</button>
-        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="mailto:pratic.iaoff@gmail.com?subject=Essai%20gratuit%20Pro%20%E2%80%94%20PraticIA&body=Bonjour%2C%0A%0AJe%20souhaite%20b%C3%A9n%C3%A9ficier%20de%20l%27essai%20gratuit%207%20jours%20pour%20le%20plan%20Pro.%0A%0AMon%20cabinet%20%3A%0AMa%20sp%C3%A9cialit%C3%A9%20%3A%0A%0AMerci%20!" style="color:var(--cyan)">Nous contacter</a></div>
+        <div class="price-guarantee">Essai 7 jours gratuit ? <a href="#" onclick="openTrialModal('Pro');return false;" style="color:var(--cyan)">Nous contacter</a></div>
       </div>
 
       <!-- Cabinet+ -->
@@ -908,7 +973,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
       <p class="cta-sub reveal">Installation en 24h. Résultats en 30 jours. Zéro risque.</p>
       <div class="cta-btns reveal">
         <button onclick="openPaymentModal('https://buy.stripe.com/5kQ7sL2yk5JbgNQbcmcEw01','Plan Pro · 199€/mois')" class="btn btn-primary btn-lg btn-glow"><i class="fa-solid fa-credit-card"></i> Souscrire — 199€/mois</button>
-        <button onclick="openModal()" class="btn btn-outline btn-lg"><i class="fa-solid fa-phone"></i> Parler à l'équipe</button>
+        <button onclick="openTeamModalFn()" class="btn btn-outline btn-lg"><i class="fa-solid fa-phone"></i> Parler à l'équipe</button>
       </div>
       <div class="cta-guarantees reveal">
         <div class="cta-guarantee"><i class="fa-solid fa-check"></i> 7 jours gratuits</div>
@@ -1058,10 +1123,53 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// ── Contact Modal ────────────────────────────────────────────
+// ── Cabinet+ Modal ───────────────────────────────────────────
 function openModal(){document.getElementById('modal-overlay').classList.add('open')}
 function closeModalBtn(){document.getElementById('modal-overlay').classList.remove('open')}
 function closeModal(e){if(e.target===document.getElementById('modal-overlay'))closeModalBtn()}
+
+// ── Essai Gratuit Modal ──────────────────────────────────────
+function openTrialModal(plan){
+  document.getElementById('trial-plan-hidden').value='Essai gratuit '+plan;
+  document.getElementById('trial-subject').value='Essai gratuit '+plan+' — PraticIA';
+  document.getElementById('trial-modal-sub').textContent='Plan '+plan+' · Remplissez ce formulaire — on vous contacte sous 24h pour lancer votre essai, sans engagement, sans carte bancaire.';
+  document.getElementById('trial-form').style.display='';
+  document.getElementById('trial-success').style.display='none';
+  document.getElementById('trial-modal-overlay').classList.add('open');
+}
+function closeTrialModalBtn(){document.getElementById('trial-modal-overlay').classList.remove('open')}
+function closeTrialModal(e){if(e.target===document.getElementById('trial-modal-overlay'))closeTrialModalBtn()}
+
+function handleTrialSubmit(e){
+  e.preventDefault();
+  const form=document.getElementById('trial-form');
+  const data=new FormData(form);
+  fetch('https://formspree.io/f/xojyblwv',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  .then(r=>{
+    if(r.ok){form.style.display='none';document.getElementById('trial-success').style.display='block';}
+    else{alert('Une erreur est survenue. Contactez-nous à pratic.iaoff@gmail.com');}
+  }).catch(()=>{alert('Une erreur est survenue. Contactez-nous à pratic.iaoff@gmail.com');});
+}
+
+// ── Parler à l'équipe Modal ──────────────────────────────────
+function openTeamModalFn(){
+  document.getElementById('team-form').style.display='';
+  document.getElementById('team-success').style.display='none';
+  document.getElementById('team-modal-overlay').classList.add('open');
+}
+function closeTeamModalBtn(){document.getElementById('team-modal-overlay').classList.remove('open')}
+function closeTeamModal(e){if(e.target===document.getElementById('team-modal-overlay'))closeTeamModalBtn()}
+
+function handleTeamSubmit(e){
+  e.preventDefault();
+  const form=document.getElementById('team-form');
+  const data=new FormData(form);
+  fetch('https://formspree.io/f/xojyblwv',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  .then(r=>{
+    if(r.ok){form.style.display='none';document.getElementById('team-success').style.display='block';}
+    else{alert('Une erreur est survenue. Contactez-nous à pratic.iaoff@gmail.com');}
+  }).catch(()=>{alert('Une erreur est survenue. Contactez-nous à pratic.iaoff@gmail.com');});
+}
 
 function handleSubmit(e){
   e.preventDefault();
@@ -1096,7 +1204,7 @@ function confirmPayment(){
 }
 function closePaymentModalBtn(){document.getElementById('payment-modal-overlay').classList.remove('open')}
 function closePaymentModal(e){if(e.target===document.getElementById('payment-modal-overlay'))closePaymentModalBtn()}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePaymentModalBtn();closeModalBtn()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePaymentModalBtn();closeModalBtn();closeTrialModalBtn();closeTeamModalBtn()}});
 
 // ── Agent Detail Modals ──────────────────────────────────────
 const agentData = {
