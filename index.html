@@ -1024,14 +1024,9 @@ document.querySelectorAll('.stat-fill[data-width]').forEach(bar=>{
   }});
 });
 
-// ── Price card tilt 3D (subtil) ──────────────────────────────
+// ── Price card hover (no 3D tilt) ────────────────────────────
 document.querySelectorAll('.price-card').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=((e.clientX-r.left)/r.width-.5)*5;
-    const y=((e.clientY-r.top)/r.height-.5)*-5;
-    card.style.transform=`perspective(1200px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
-  });
+  card.addEventListener('mouseenter',()=>card.style.transform='translateY(-4px)');
   card.addEventListener('mouseleave',()=>card.style.transform='');
 });
 
@@ -1109,7 +1104,7 @@ const agentData = {
     emoji:'⭐', name:'Nova', role:'Agent Avis Google',
     c1:'#00C9A7', c2:'#4361EE',
     mission:'Nova surveille votre Google Sheet toutes les 15 minutes. Dès qu\'un nouveau patient est ajouté avec son prénom et son téléphone, elle lui envoie automatiquement un SMS personnalisé pour l\'inviter à laisser un avis sur votre fiche Google.',
-    sms:[{label:'SMS envoyé au patient', text:'"Bonjour Marie, merci pour votre visite chez le Dr Dupont. Votre avis nous aide à améliorer notre service : https://g.page/r/..."'}],
+    sms:[{label:'SMS envoyé au patient', text:'"Bonjour Marie, merci pour votre consultation chez le Dr Dupont. Un avis Google nous aiderait vraiment : https://g.page/r/... Merci et bonne journée !"'}],
     steps:[
       {title:'La secrétaire saisit les données', desc:'Prénom, nom et numéro de téléphone du patient dans le Google Sheet après chaque consultation — 10 secondes de travail.'},
       {title:'Nova scanne toutes les 15 minutes', desc:'Elle vérifie automatiquement si de nouvelles lignes sont apparues et si le SMS n\'a pas encore été envoyé.'},
@@ -1134,10 +1129,10 @@ const agentData = {
       {title:'Scan quotidien chaque matin', desc:'Echo parcourt chaque ligne et calcule l\'ancienneté depuis la dernière visite.'},
       {title:'Détection des inactifs', desc:'Patients sans visite depuis 6+ mois — seuil ajustable selon votre spécialité.'},
       {title:'Envoi du SMS de relance', desc:'Message chaleureux adapté à votre ton et votre spécialité. Le patient ne perçoit pas d\'automatisme.'},
-      {title:'Relance J+7 et respect du STOP', desc:'Si pas de réaction, une deuxième relance à J+7. Le droit d\'opposition (répondre STOP) est respecté automatiquement.'},
+      {title:'Respect du STOP', desc:'Le droit d\'opposition (répondre STOP) est respecté automatiquement. Aucun doublon, aucun envoi si le patient a déjà reçu son SMS.'},
     ],
-    vous:['Tenir la liste patients à jour','Configurer le seuil d\'inactivité (6 mois par défaut)'],
-    nova:['Détecter les patients inactifs chaque matin','Envoyer les SMS de relance personnalisés','Gérer la relance J+7','Respecter le droit STOP automatiquement'],
+    vous:['Tenir la liste patients à jour','Indiquer la date de dernière visite pour chaque patient'],
+    nova:['Détecter les patients inactifs chaque matin','Envoyer le SMS de relance personnalisé','Respecter le droit STOP automatiquement'],
     stats:[{num:'23%',lbl:'patients relancés reprennent RDV'},{num:'+11',lbl:'RDV récupérés/mois (200 patients)'},{num:'6 mois',lbl:'seuil d\'inactivité (configurable)'}],
     privacy:['Seuls prénom et téléphone transmis','Aucune donnée médicale ou de diagnostic','Droit d\'opposition STOP intégré','Conforme RGPD — données dans votre Drive']
   },
@@ -1151,14 +1146,14 @@ const agentData = {
     ],
     steps:[
       {title:'Note du type de soin dans le Sheet', desc:'La secrétaire indique le type de traitement et la date dans le Google Sheet après la consultation.'},
-      {title:'Aria calcule J+1 et J+7', desc:'Automatiquement, elle programme les envois pour le lendemain et 7 jours après.'},
-      {title:'Envoi du SMS J+1', desc:'Message de suivi bienveillant pour prendre des nouvelles. Personnalisé avec le nom du patient et du praticien.'},
-      {title:'Envoi du SMS J+7', desc:'Deuxième point de suivi une semaine après. Invite à reprendre contact si besoin.'},
+      {title:'Aria calcule 48h et J+7', desc:'Automatiquement, elle programme les envois pour le surlendemain (48h) et 7 jours après la consultation.'},
+      {title:'Envoi de l\'email à 48h', desc:'Message de suivi bienveillant pour prendre des nouvelles. Personnalisé avec le nom du patient et du praticien.'},
+      {title:'Envoi de l\'email J+7', desc:'Deuxième point de contact une semaine après. Invite à reprendre contact si besoin.'},
       {title:'Détection et alerte', desc:'Si le patient répond avec un mot-clé d\'alerte (douleur, problème, urgence…), un email est envoyé immédiatement au praticien.'},
     ],
     vous:['Indiquer le type de soin et la date dans le Sheet','Traiter les alertes si un patient signale un problème'],
-    nova:['Calculer J+1 et J+7 automatiquement','Envoyer les SMS de suivi','Détecter les mots-clés d\'alerte','Notifier immédiatement le praticien'],
-    stats:[{num:'100%',lbl:'patients suivis après chaque soin'},{num:'J+1/J+7',lbl:'deux points de contact automatiques'},{num:'0',lbl:'patients abandonnés sans suivi'}],
+    nova:['Calculer 48h et J+7 automatiquement','Envoyer les emails de suivi','Détecter les mots-clés d\'alerte','Notifier immédiatement le praticien'],
+    stats:[{num:'100%',lbl:'patients suivis après chaque soin'},{num:'48h/J+7',lbl:'deux points de contact automatiques'},{num:'0',lbl:'patients abandonnés sans suivi'}],
     privacy:['Seuls prénom, téléphone et type de soin transmis','Aucune donnée médicale détaillée','Les réponses patients restent dans votre Sheet','Conforme RGPD']
   }
 };
