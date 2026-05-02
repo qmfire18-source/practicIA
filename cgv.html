@@ -11,56 +11,56 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#06071A;--bg2:#0B0D2A;
-  --blue:#4361EE;--purple:#7209B7;--cyan:#00C9A7;--pink:#F72585;
-  --white:#fff;--gray:#A0A8C0;
-  --border:rgba(255,255,255,0.08);--glass:rgba(255,255,255,0.04);
+  --bg:#F8FAF9;--bg2:#EEF4F1;
+  --blue:#1A6B5A;--purple:#2E5FAC;--cyan:#3AAFA9;--pink:#3579C4;
+  --white:#1C2B27;--gray:#6B8A82;
+  --border:rgba(26,107,90,0.12);--glass:rgba(26,107,90,0.04);
   --r:16px;--rl:24px;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
-a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a{color:var(--blue);text-decoration:none;transition:opacity .2s}
 a:hover{opacity:.75}
-::selection{background:rgba(67,97,238,0.4);color:#fff}
+::selection{background:rgba(26,107,90,0.3);color:#1C2B27}
 .container{max-width:860px;margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(6,7,26,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:16px 0}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(248,250,249,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:16px 0;box-shadow:0 2px 20px rgba(26,107,90,0.06)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
-.logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,#fff 30%,#7B9BFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--blue) 30%,var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
 .logo span{-webkit-text-fill-color:var(--cyan)}
 .nav-back{font-size:14px;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color .2s}
 .nav-back:hover{color:var(--white)}
 .page-hero{padding:140px 0 60px;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(114,9,183,0.12) 0%,transparent 70%);top:-200px;right:-100px;pointer-events:none}
+.page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(46,95,172,0.07) 0%,transparent 70%);top:-200px;right:-100px;pointer-events:none}
 .breadcrumb{font-size:13px;color:var(--gray);margin-bottom:20px}
 .breadcrumb a{color:var(--gray);transition:color .2s}
-.breadcrumb a:hover{color:var(--cyan)}
+.breadcrumb a:hover{color:var(--blue)}
 .breadcrumb span{margin:0 8px;opacity:.4}
 .page-title{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px}
-.gradient-text{background:linear-gradient(135deg,#4361EE 0%,#7209B7 50%,#00C9A7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-text{background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 50%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .page-sub{color:var(--gray);font-size:16px}
 .legal-content{padding:0 0 100px}
-.legal-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rl);padding:40px;margin-bottom:24px;transition:border-color .3s}
-.legal-card:hover{border-color:rgba(67,97,238,0.25)}
+.legal-card{background:rgba(255,255,255,0.6);border:1px solid var(--border);border-radius:var(--rl);padding:40px;margin-bottom:24px;transition:border-color .3s}
+.legal-card:hover{border-color:rgba(26,107,90,0.28)}
 .legal-card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:12px}
 .legal-card h2 i{color:var(--cyan);font-size:16px;width:20px}
-.legal-card p,.legal-card li{color:rgba(255,255,255,0.8);font-size:15px;line-height:1.75;margin-bottom:12px}
+.legal-card p,.legal-card li{color:rgba(28,43,39,0.8);font-size:15px;line-height:1.75;margin-bottom:12px}
 .legal-card p:last-child{margin-bottom:0}
 .legal-card strong{color:var(--white)}
-.legal-card a{color:var(--cyan)}
+.legal-card a{color:var(--blue)}
 .legal-card ul{padding-left:20px;margin-bottom:14px}
-.legal-card ul li{list-style:disc;color:rgba(255,255,255,0.8);font-size:15px;line-height:1.75;margin-bottom:6px}
-.update-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.2);color:var(--cyan);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:32px}
+.legal-card ul li{list-style:disc;color:rgba(28,43,39,0.8);font-size:15px;line-height:1.75;margin-bottom:6px}
+.update-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(58,175,169,0.1);border:1px solid rgba(58,175,169,0.25);color:var(--cyan);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:32px}
 .article-num{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--purple));color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-right:10px;vertical-align:middle}
 .price-table{width:100%;border-collapse:collapse;margin:20px 0}
-.price-table th{background:rgba(67,97,238,0.15);padding:12px 16px;text-align:left;font-size:13px;font-weight:700;border-bottom:1px solid var(--border)}
-.price-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05)}
+.price-table th{background:rgba(26,107,90,0.08);padding:12px 16px;text-align:left;font-size:13px;font-weight:700;border-bottom:1px solid var(--border)}
+.price-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(26,107,90,0.07)}
 .price-table tr:last-child td{border-bottom:none}
-.price-table tr:hover td{background:rgba(255,255,255,0.02)}
+.price-table tr:hover td{background:rgba(26,107,90,0.03)}
 footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
 .footer-copy{font-size:13px;color:var(--gray);margin-bottom:16px}
 .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
 .footer-links a{font-size:13px;color:var(--gray);transition:color .2s}
-.footer-links a:hover{color:var(--cyan)}
+.footer-links a:hover{color:var(--blue)}
 @media(max-width:640px){.legal-card{padding:24px}}
 </style>
 </head>
