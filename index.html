@@ -138,8 +138,8 @@ a{color:inherit;text-decoration:none}
 #problem{position:relative;overflow:hidden}
 .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .problem-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:800;line-height:1.15;margin:16px 0 24px}
-.problem-sub{color:var(--gray);font-size:17px;line-height:1.7;margin-bottom:32px}
-.pain-list{display:flex;flex-direction:column;gap:14px}
+.problem-sub{color:var(--gray);font-size:17px;line-height:1.7;margin-bottom:0}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
 .pain-item{display:flex;gap:16px;align-items:flex-start;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:18px;transition:all .4s;cursor:default}
 .pain-item:hover{background:rgba(46,95,172,0.06);border-color:rgba(46,95,172,0.22);transform:translateX(6px)}
 .pain-ico{width:40px;height:40px;border-radius:10px;background:rgba(46,95,172,0.1);display:flex;align-items:center;justify-content:center;color:#2E5FAC;font-size:17px;flex-shrink:0;transition:transform .3s}
@@ -153,8 +153,8 @@ a{color:inherit;text-decoration:none}
 .stat-item-header{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
 .stat-bar{height:8px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden}
 .stat-fill{height:100%;border-radius:100px;width:0;transition:width 2s ease}
-.loss-card{position:absolute;bottom:-28px;right:-24px;background:rgba(46,95,172,0.08);border:1px solid rgba(46,95,172,0.22);border-radius:14px;padding:18px 22px;backdrop-filter:blur(20px);transition:transform .3s}
-.loss-card:hover{transform:scale(1.05) rotate(-1deg) !important}
+.loss-card{margin-top:14px;background:rgba(46,95,172,0.08);border:1px solid rgba(46,95,172,0.22);border-radius:14px;padding:18px 22px;backdrop-filter:blur(20px);transition:transform .3s}
+.loss-card:hover{transform:scale(1.02)}
 .loss-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:#2E5FAC}
 .loss-label{font-size:12px;color:var(--gray)}
 
@@ -398,7 +398,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
 
 /* ══ RESPONSIVE ══ */
 @media(max-width:900px){
-  .hero-inner,.problem-grid,.security-grid{grid-template-columns:1fr}
+  .hero-inner,.problem-grid,.security-grid,.pain-grid{grid-template-columns:1fr}
   .hero-visual{display:none}
   .agents-grid,.testi-grid,.pricing-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
   .steps{grid-template-columns:1fr 1fr}.steps::before{display:none}
@@ -675,14 +675,8 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
         <div class="tag reveal"><i class="fa-solid fa-triangle-exclamation"></i> Le problème</div>
         <h2 class="problem-title reveal">Votre cabinet perd des clients <span class="gradient-text">sans le savoir</span></h2>
         <p class="problem-sub reveal">Vos outils gèrent vos rendez-vous. Personne ne gère ce qui se passe <em>après</em>. C'est là que les clients disparaissent — vers un concurrent mieux référencé ou plus attentionné.</p>
-        <div class="pain-list">
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-user-slash"></i></div><div class="pain-text"><strong>30 à 40% de clients ne reviennent jamais</strong><span>Après une séance, la majorité ne reprend pas spontanément rendez-vous — faute d'un simple rappel.</span></div></div>
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-star-half-stroke"></i></div><div class="pain-text"><strong>Vous êtes invisible sur Google</strong><span>Un praticien avec 12 avis perd face à un concurrent avec 200, même s'il est meilleur. Les praticiens libéraux vivent du bouche-à-oreille — et les avis Google, c'est le bouche-à-oreille numérique.</span></div></div>
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="pain-text"><strong>Vos clients inactifs ne sont jamais relancés</strong><span>Des dizaines de clients n'ont pas repris séance depuis 6 mois. Ils ne sont pas partis — ils ont juste oublié. Un SMS suffit.</span></div></div>
-          <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-comment-slash"></i></div><div class="pain-text"><strong>Zéro suivi post-séance</strong><span>Après une séance d'ostéopathie, de naturopathie ou d'acupuncture — silence radio. Le client se sent abandonné, et ne revient pas.</span></div></div>
-        </div>
       </div>
-      <div class="stats-visual reveal" style="position:relative">
+      <div class="stats-visual reveal">
         <div class="stat-card">
           <p style="font-size:13px;color:var(--gray);margin-bottom:22px;font-weight:700;text-transform:uppercase;letter-spacing:.05em">Sans PraticIA — Praticien libéral type</p>
           <div class="stat-row">
@@ -694,6 +688,12 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
         </div>
         <div class="loss-card"><div class="loss-num">-1 200€</div><div class="loss-label">perdus/mois en moyenne<br>sur 150 séances</div></div>
       </div>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-user-slash"></i></div><div class="pain-text"><strong>30 à 40% de clients ne reviennent jamais</strong><span>Après une séance, la majorité ne reprend pas spontanément rendez-vous — faute d'un simple rappel.</span></div></div>
+      <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-star-half-stroke"></i></div><div class="pain-text"><strong>Vous êtes invisible sur Google</strong><span>Un praticien avec 12 avis perd face à un concurrent avec 200, même s'il est meilleur. Les praticiens libéraux vivent du bouche-à-oreille — et les avis Google, c'est le bouche-à-oreille numérique.</span></div></div>
+      <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="pain-text"><strong>Vos clients inactifs ne sont jamais relancés</strong><span>Des dizaines de clients n'ont pas repris séance depuis 6 mois. Ils ne sont pas partis — ils ont juste oublié. Un SMS suffit.</span></div></div>
+      <div class="pain-item reveal"><div class="pain-ico"><i class="fa-solid fa-comment-slash"></i></div><div class="pain-text"><strong>Zéro suivi post-séance</strong><span>Après une séance d'ostéopathie, de naturopathie ou d'acupuncture — silence radio. Le client se sent abandonné, et ne revient pas.</span></div></div>
     </div>
   </div>
 </section>
