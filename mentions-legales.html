@@ -71,6 +71,23 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
   .info-grid{grid-template-columns:1fr}
   .legal-card{padding:24px}
 }
+#team-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(12px);z-index:9998;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+#team-modal-overlay.open{opacity:1;pointer-events:all}
+.tmodal{background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);padding:32px 40px;max-width:520px;width:calc(100% - 32px);max-height:90vh;overflow-y:auto;position:relative;transform:scale(.95) translateY(20px);transition:transform .3s;box-shadow:0 20px 60px rgba(26,107,90,0.1)}
+#team-modal-overlay.open .tmodal{transform:scale(1) translateY(0)}
+.tmodal-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--gray);font-size:20px;cursor:pointer;transition:color .2s}
+.tmodal-close:hover{color:var(--white)}
+.tmodal-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px;color:var(--white)}
+.tmodal-sub{color:var(--gray);font-size:13px;margin-bottom:20px;line-height:1.6}
+.tform-group{margin-bottom:14px}
+.tform-group label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--gray)}
+.tform-group input,.tform-group textarea{width:100%;background:rgba(255,255,255,0.85);border:1px solid var(--border);border-radius:12px;padding:11px 14px;color:var(--white);font-size:13px;font-family:inherit;transition:border-color .3s;outline:none;resize:none}
+.tform-group input:focus,.tform-group textarea:focus{border-color:var(--blue)}
+.tform-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tform-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:inherit;background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;width:100%;margin-top:8px}
+.tform-btn:hover{opacity:.9}
+.tform-success{display:none;text-align:center;padding:24px;background:rgba(58,175,169,0.1);border:1px solid rgba(58,175,169,0.3);border-radius:12px;color:var(--cyan);font-weight:600}
+@media(max-width:600px){.tform-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -161,10 +178,49 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
       <a href="index.html">Accueil</a>
       <a href="cgv.html">CGV</a>
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
-      <a href="mailto:pratic.iaoff@gmail.com">Contact</a>
+      <a href="#" onclick="openTeamModal();return false;">Contact</a>
     </div>
   </div>
 </footer>
+
+<div id="team-modal-overlay" onclick="if(event.target===this)closeTeamModal()">
+  <div class="tmodal">
+    <button class="tmodal-close" onclick="closeTeamModal()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="tmodal-title">Parler à <span style="background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 50%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">l'équipe</span></div>
+    <div class="tmodal-sub">Une question ? On vous rappelle sous 24h. Pas de pression, pas d'engagement.</div>
+    <form id="team-form-legal" onsubmit="handleTeamSubmit(event)">
+      <div class="tform-grid">
+        <div class="tform-group"><label>Prénom *</label><input type="text" name="prenom" required placeholder="Marie"/></div>
+        <div class="tform-group"><label>Nom *</label><input type="text" name="nom" required placeholder="Dupont"/></div>
+      </div>
+      <div class="tform-group"><label>Email *</label><input type="email" name="email" required placeholder="contact@cabinet.fr"/></div>
+      <div class="tform-group"><label>Téléphone *</label><input type="tel" name="tel" required placeholder="06 12 34 56 78"/></div>
+      <div class="tform-group"><label>Message (optionnel)</label><textarea name="message" rows="2" placeholder="Votre question ou contexte..."></textarea></div>
+      <button type="submit" class="tform-btn"><i class="fa-solid fa-paper-plane"></i> Envoyer ma demande</button>
+    </form>
+    <div class="tform-success" id="team-success-legal"><i class="fa-solid fa-circle-check" style="font-size:24px;margin-bottom:12px;display:block"></i>Message envoyé ! On vous recontacte sous 24h.</div>
+  </div>
+</div>
+<script>
+function openTeamModal(){
+  document.getElementById('team-form-legal').style.display='';
+  document.getElementById('team-success-legal').style.display='none';
+  document.getElementById('team-modal-overlay').classList.add('open');
+}
+function closeTeamModal(){document.getElementById('team-modal-overlay').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTeamModal()});
+function handleTeamSubmit(e){
+  e.preventDefault();
+  const form=document.getElementById('team-form-legal');
+  const data=new FormData(form);
+  data.append('_subject','Contact depuis Mentions légales — PraticIA');
+  fetch('https://formspree.io/f/xojyblwv',{method:'POST',body:data,headers:{Accept:'application/json'}})
+    .then(r=>{
+      if(r.ok){form.style.display='none';document.getElementById('team-success-legal').style.display='block';}
+      else{alert('Erreur envoi, réessayez.');}
+    }).catch(()=>alert('Erreur réseau, réessayez.'));
+}
+</script>
 
 </body>
 </html>

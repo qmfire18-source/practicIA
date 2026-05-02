@@ -141,21 +141,21 @@ a{color:inherit;text-decoration:none}
 .problem-sub{color:var(--gray);font-size:17px;line-height:1.7;margin-bottom:32px}
 .pain-list{display:flex;flex-direction:column;gap:14px}
 .pain-item{display:flex;gap:16px;align-items:flex-start;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:18px;transition:all .4s;cursor:default}
-.pain-item:hover{background:rgba(192,57,43,0.06);border-color:rgba(192,57,43,0.22);transform:translateX(6px)}
-.pain-ico{width:40px;height:40px;border-radius:10px;background:rgba(192,57,43,0.1);display:flex;align-items:center;justify-content:center;color:#C0392B;font-size:17px;flex-shrink:0;transition:transform .3s}
+.pain-item:hover{background:rgba(46,95,172,0.06);border-color:rgba(46,95,172,0.22);transform:translateX(6px)}
+.pain-ico{width:40px;height:40px;border-radius:10px;background:rgba(46,95,172,0.1);display:flex;align-items:center;justify-content:center;color:#2E5FAC;font-size:17px;flex-shrink:0;transition:transform .3s}
 .pain-item:hover .pain-ico{transform:scale(1.1) rotate(5deg)}
 .pain-text strong{display:block;font-size:14px;margin-bottom:3px}
 .pain-text span{font-size:13px;color:var(--gray)}
 
 .stat-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rl);padding:32px;backdrop-filter:blur(10px);position:relative;transition:border-color .4s,box-shadow .4s}
-.stat-card:hover{border-color:rgba(192,57,43,0.18);box-shadow:0 20px 60px rgba(192,57,43,0.05)}
+.stat-card:hover{border-color:rgba(46,95,172,0.18);box-shadow:0 20px 60px rgba(46,95,172,0.05)}
 .stat-row{display:flex;flex-direction:column;gap:18px}
 .stat-item-header{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
 .stat-bar{height:8px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden}
 .stat-fill{height:100%;border-radius:100px;width:0;transition:width 2s ease}
-.loss-card{position:absolute;bottom:-28px;right:-24px;background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.22);border-radius:14px;padding:18px 22px;backdrop-filter:blur(20px);transition:transform .3s}
+.loss-card{position:absolute;bottom:-28px;right:-24px;background:rgba(46,95,172,0.08);border:1px solid rgba(46,95,172,0.22);border-radius:14px;padding:18px 22px;backdrop-filter:blur(20px);transition:transform .3s}
 .loss-card:hover{transform:scale(1.05) rotate(-1deg) !important}
-.loss-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:#C0392B}
+.loss-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:#2E5FAC}
 .loss-label{font-size:12px;color:var(--gray)}
 
 /* ══ AGENTS ══ */
@@ -241,10 +241,10 @@ a{color:inherit;text-decoration:none}
 .price-card::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);transition:left .55s ease;pointer-events:none}
 .price-card:hover::after{left:150%}
 .price-card:hover{box-shadow:0 30px 80px rgba(0,0,0,0.5);border-color:rgba(255,255,255,0.14)}
-.price-card.featured{border-color:rgba(26,107,90,0.35);background:var(--glass);position:relative;box-shadow:0 8px 32px rgba(26,107,90,0.1)}
+.price-card.featured{border-color:var(--border);background:var(--glass);position:relative;box-shadow:none}
 .price-card.featured .card-bg{display:none}
 .price-card.featured>*{position:relative;z-index:1}
-.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--purple));color:white;font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;white-space:nowrap;z-index:2}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;white-space:nowrap;z-index:2}
 .price-name{font-size:13px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .price-amount{font-family:'Syne',sans-serif;font-size:54px;font-weight:800;line-height:1;margin-bottom:4px}
 .price-amount span{font-size:22px;vertical-align:top;margin-top:12px;display:inline-block}
@@ -385,8 +385,8 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
 .am-privacy-item{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(28,43,39,0.8)}
 .am-privacy-item i{color:var(--cyan);font-size:12px;flex-shrink:0}
 .am-modal-cta{margin-top:8px;padding:24px 40px 36px;border-top:1px solid var(--border);text-align:center}
-.agent-discover{display:inline-flex;align-items:center;gap:7px;margin-top:18px;padding:9px 18px;background:rgba(26,107,90,0.07);border:1px solid rgba(26,107,90,0.22);border-radius:100px;font-size:13px;font-weight:700;color:var(--blue);cursor:pointer;transition:all .3s;font-family:inherit}
-.agent-discover:hover{background:rgba(26,107,90,0.14);border-color:var(--blue);transform:translateX(4px)}
+.agent-discover{display:inline-flex;align-items:center;gap:7px;margin-top:18px;padding:9px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--c1);border-radius:100px;font-size:13px;font-weight:700;color:var(--c1);cursor:pointer;transition:all .3s;font-family:inherit}
+.agent-discover:hover{background:rgba(255,255,255,0.08);border-color:var(--c1);transform:translateX(4px)}
 .agent-discover i{font-size:11px;transition:transform .3s}
 .agent-discover:hover i{transform:translateX(3px)}
 
@@ -608,7 +608,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
         </div>
       </div>
       <div class="hero-visual reveal">
-        <div class="float-card float-card-1"><span class="live-dot"></span>Nova vient d'envoyer 12 demandes d'avis ⭐</div>
+        <div class="float-card float-card-1" style="background:rgba(26,107,90,0.1);border-color:rgba(26,107,90,0.25)"><span class="live-dot"></span>Nova vient d'envoyer 12 demandes d'avis ⭐</div>
         <div class="dashboard-card">
           <div class="dash-header">
             <span class="dash-title">Cabinet Dr. Martin 🌿</span>
@@ -668,7 +668,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
 
 <!-- ══ PROBLEM ══ -->
 <section id="problem" class="section">
-  <div class="orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(192,57,43,0.06) 0%,transparent 70%);top:0;right:-200px"></div>
+  <div class="orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(46,95,172,0.06) 0%,transparent 70%);top:0;right:-200px"></div>
   <div class="container">
     <div class="problem-grid">
       <div>
@@ -686,10 +686,10 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
         <div class="stat-card">
           <p style="font-size:13px;color:var(--gray);margin-bottom:22px;font-weight:700;text-transform:uppercase;letter-spacing:.05em">Sans PraticIA — Praticien libéral type</p>
           <div class="stat-row">
-            <div class="stat-item"><div class="stat-item-header"><span>Patients qui reviennent spontanément</span><span style="color:#C0392B">62%</span></div><div class="stat-bar"><div class="stat-fill" data-width="62" style="background:rgba(192,57,43,0.45)"></div></div></div>
-            <div class="stat-item"><div class="stat-item-header"><span>Patients qui laissent un avis Google</span><span style="color:#C0392B">4%</span></div><div class="stat-bar"><div class="stat-fill" data-width="4" style="background:rgba(192,57,43,0.45)"></div></div></div>
-            <div class="stat-item"><div class="stat-item-header"><span>Remplissage après annulation</span><span style="color:#C0392B">41%</span></div><div class="stat-bar"><div class="stat-fill" data-width="41" style="background:rgba(192,57,43,0.45)"></div></div></div>
-            <div class="stat-item"><div class="stat-item-header"><span>Patients avec suivi post-soin</span><span style="color:#C0392B">8%</span></div><div class="stat-bar"><div class="stat-fill" data-width="8" style="background:rgba(192,57,43,0.45)"></div></div></div>
+            <div class="stat-item"><div class="stat-item-header"><span>Patients qui reviennent spontanément</span><span style="color:#2E5FAC">62%</span></div><div class="stat-bar"><div class="stat-fill" data-width="62" style="background:rgba(46,95,172,0.45)"></div></div></div>
+            <div class="stat-item"><div class="stat-item-header"><span>Patients qui laissent un avis Google</span><span style="color:#2E5FAC">4%</span></div><div class="stat-bar"><div class="stat-fill" data-width="4" style="background:rgba(46,95,172,0.45)"></div></div></div>
+            <div class="stat-item"><div class="stat-item-header"><span>Remplissage après annulation</span><span style="color:#2E5FAC">41%</span></div><div class="stat-bar"><div class="stat-fill" data-width="41" style="background:rgba(46,95,172,0.45)"></div></div></div>
+            <div class="stat-item"><div class="stat-item-header"><span>Patients avec suivi post-soin</span><span style="color:#2E5FAC">8%</span></div><div class="stat-bar"><div class="stat-fill" data-width="8" style="background:rgba(46,95,172,0.45)"></div></div></div>
           </div>
         </div>
         <div class="loss-card"><div class="loss-num">-1 200€</div><div class="loss-label">perdus/mois en moyenne<br>sur 150 séances</div></div>
@@ -891,6 +891,7 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
       <!-- Pro -->
       <div class="price-card featured reveal" id="card-pro">
         <div class="card-bg"></div>
+        <div class="price-accent-bar" style="background:linear-gradient(90deg,var(--blue),var(--cyan))"></div>
         <div class="price-badge">⭐ Le plus populaire</div>
         <div class="price-icon-badge" style="background:rgba(46,95,172,0.12);color:var(--purple)"><i class="fa-solid fa-rocket"></i></div>
         <div class="price-name">Pro</div>
@@ -1280,9 +1281,9 @@ function openAgentModal(id){
       <div class="am-section">
         <div class="am-section-title"><i class="fa-solid fa-scale-balanced"></i> Répartition des tâches</div>
         <div class="am-cols">
-          <div class="am-col" style="border-color:rgba(212,134,11,0.25)">
-            <div class="am-col-title" style="color:#D4860B">Ce que VOUS faites</div>
-            <div class="am-col-items">${d.vous.map(t=>`<div class="am-col-item"><i class="fa-solid fa-circle-dot" style="color:#D4860B"></i>${t}</div>`).join('')}</div>
+          <div class="am-col" style="border-color:rgba(53,121,196,0.25)">
+            <div class="am-col-title" style="color:#3579C4">Ce que VOUS faites</div>
+            <div class="am-col-items">${d.vous.map(t=>`<div class="am-col-item"><i class="fa-solid fa-circle-dot" style="color:#3579C4"></i>${t}</div>`).join('')}</div>
           </div>
           <div class="am-col" style="border-color:rgba(58,175,169,0.25)">
             <div class="am-col-title" style="color:var(--cyan)">${agentLabel}</div>
