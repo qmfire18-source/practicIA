@@ -92,39 +92,39 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
 
     <div class="legal-card">
       <h2><i class="fa-solid fa-eye"></i> <span class="article-num">1</span> Qui sommes-nous ?</h2>
-      <p><strong>PraticIA</strong> est un service d'automatisation IA pour cabinets médicaux, édité par Quentin Malabave.</p>
+      <p><strong>PraticIA</strong> est un service d'automatisation IA pour praticiens libéraux, édité par Quentin Malabave.</p>
       <p>Contact : <a href="mailto:pratic.iaoff@gmail.com">pratic.iaoff@gmail.com</a></p>
-      <p>Nous traitons des données personnelles dans le cadre de nos services. PraticIA agit à la fois comme <strong>responsable de traitement</strong> (pour ses propres données clients) et comme <strong>sous-traitant</strong> (pour les données patients de ses clients médecins).</p>
+      <p>Nous traitons des données personnelles dans le cadre de nos services. PraticIA agit à la fois comme <strong>responsable de traitement</strong> (pour ses propres données clients) et comme <strong>sous-traitant</strong> (pour les données des clients finaux de ses praticiens).</p>
     </div>
 
     <div class="legal-card">
       <h2><i class="fa-solid fa-database"></i> <span class="article-num">2</span> Données que nous collectons</h2>
-      <p><strong>A. Données des professionnels de santé (nos clients)</strong></p>
+      <p><strong>A. Données des praticiens libéraux (nos clients)</strong></p>
       <table class="data-table">
         <tr><th>Donnée</th><th>Finalité</th><th>Base légale</th></tr>
         <tr><td>Nom, prénom, email</td><td>Création et gestion du compte</td><td>Exécution du contrat</td></tr>
-        <tr><td>Spécialité médicale</td><td>Personnalisation des agents</td><td>Exécution du contrat</td></tr>
+        <tr><td>Type de pratique</td><td>Personnalisation des agents</td><td>Exécution du contrat</td></tr>
         <tr><td>Données de paiement Stripe</td><td>Facturation (hébergées par Stripe)</td><td>Exécution du contrat</td></tr>
         <tr><td>Logs d'utilisation</td><td>Support et amélioration du service</td><td>Intérêt légitime</td></tr>
       </table>
 
-      <p><strong>B. Données des patients des cabinets (sous-traitance)</strong></p>
+      <p><strong>B. Données des clients des praticiens (sous-traitance)</strong></p>
       <table class="data-table">
         <tr><th>Donnée</th><th>Usage</th><th>Qui la stocke ?</th></tr>
-        <tr><td>Prénom du patient</td><td>Personnalisation des messages SMS et emails</td><td>Google Sheets du cabinet</td></tr>
+        <tr><td>Prénom du client</td><td>Personnalisation des messages SMS et emails</td><td>Google Sheets du praticien</td></tr>
         <tr><td>Numéro de téléphone</td><td>Envoi des SMS transactionnels via Brevo (agents Nova et Echo)</td><td>Google Sheets + Brevo (transit)</td></tr>
-        <tr><td>Adresse email du patient</td><td>Envoi des emails de suivi post-consultation via Gmail (agent Aria)</td><td>Google Sheets du cabinet</td></tr>
-        <tr><td>Type de soin générique</td><td>Personnalisation des messages envoyés</td><td>Google Sheets du cabinet</td></tr>
-        <tr><td>Date de consultation</td><td>Déclenchement automatique des envois</td><td>Google Sheets du cabinet</td></tr>
+        <tr><td>Adresse email du client</td><td>Envoi des emails de suivi post-séance via Gmail (agent Aria)</td><td>Google Sheets du praticien</td></tr>
+        <tr><td>Type de pratique générique</td><td>Personnalisation des messages envoyés</td><td>Google Sheets du praticien</td></tr>
+        <tr><td>Date de séance</td><td>Déclenchement automatique des envois</td><td>Google Sheets du praticien</td></tr>
       </table>
-      <p>⚠️ <strong>Aucune donnée médicale confidentielle</strong> (diagnostic, dossier médical, ordonnance) n'est traitée par PraticIA.</p>
+      <p>⚠️ <strong>Aucune donnée sensible ou confidentielle</strong> (diagnostic, bilan de santé, notes de séance) n'est traitée par PraticIA.</p>
     </div>
 
     <div class="legal-card">
       <h2><i class="fa-solid fa-clock"></i> <span class="article-num">3</span> Durée de conservation</h2>
       <ul>
-        <li><strong>Données clients (professionnels de santé)</strong> : conservées pendant la durée du contrat + 3 ans après résiliation pour des raisons légales (fiscalité)</li>
-        <li><strong>Données patients</strong> : conservées uniquement dans le Google Sheets du cabinet, sous le contrôle exclusif du praticien</li>
+        <li><strong>Données clients (praticiens libéraux)</strong> : conservées pendant la durée du contrat + 3 ans après résiliation pour des raisons légales (fiscalité)</li>
+        <li><strong>Données des clients finaux</strong> : conservées uniquement dans le Google Sheets du praticien, sous son contrôle exclusif</li>
         <li><strong>Logs techniques</strong> : 90 jours</li>
         <li><strong>Formulaires de contact</strong> : 1 an après le dernier échange</li>
       </ul>
@@ -136,28 +136,28 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
       <ul>
         <li><strong>Stripe</strong> — paiement sécurisé (données bancaires jamais vues par PraticIA)</li>
         <li><strong>Make.com</strong> — orchestration des workflows d'automatisation, opéré depuis le compte Make.com de PraticIA. Make accède en lecture aux Google Sheets des cabinets clients uniquement pour déclencher les envois de messages.</li>
-        <li><strong>Brevo (Sendinblue SAS)</strong> — envoi des SMS transactionnels aux patients via les agents Nova et Echo (numéro de téléphone + contenu du message uniquement). Société française, données hébergées en Europe.</li>
-        <li><strong>Gmail (Google)</strong> — envoi des emails de suivi post-consultation via l'agent Aria (adresse email + contenu du message uniquement). Données transitant par les serveurs Google.</li>
-        <li><strong>Google Workspace</strong> — hébergement des Google Sheets des cabinets (sous le contrôle du praticien)</li>
+        <li><strong>Brevo (Sendinblue SAS)</strong> — envoi des SMS transactionnels aux clients via les agents Nova et Echo (numéro de téléphone + contenu du message uniquement). Société française, données hébergées en Europe.</li>
+        <li><strong>Gmail (Google)</strong> — envoi des emails de suivi post-séance via l'agent Aria (adresse email + contenu du message uniquement). Données transitant par les serveurs Google.</li>
+        <li><strong>Google Workspace</strong> — hébergement des Google Sheets des praticiens (sous le contrôle du praticien)</li>
       </ul>
       <p>Tous ces prestataires sont conformes au RGPD et disposent de certifications de sécurité appropriées.</p>
     </div>
 
     <div class="legal-card" style="border-color:rgba(67,97,238,0.3)">
       <h2><i class="fa-solid fa-handshake"></i> <span class="article-num">5</span> Accord de sous-traitance des données (DPA)</h2>
-      <p>Conformément à l'<strong>article 28 du RGPD</strong>, PraticIA agit en qualité de <strong>sous-traitant</strong> pour les données patients de ses clients (les cabinets médicaux, qui sont les responsables de traitement).</p>
+      <p>Conformément à l'<strong>article 28 du RGPD</strong>, PraticIA agit en qualité de <strong>sous-traitant</strong> pour les données des clients finaux de ses praticiens (les praticiens libéraux, qui sont les responsables de traitement).</p>
       <p>Dans ce cadre, PraticIA s'engage contractuellement à :</p>
       <ul>
-        <li>Ne traiter les données patients <strong>que sur instruction documentée</strong> du cabinet client</li>
+        <li>Ne traiter les données <strong>que sur instruction documentée</strong> du praticien client</li>
         <li>Garantir que les personnes habilitées à traiter les données sont soumises à une obligation de confidentialité</li>
         <li>Mettre en œuvre les mesures de sécurité appropriées (article 32 du RGPD)</li>
         <li>Ne pas recruter d'autre sous-traitant sans autorisation préalable écrite du cabinet</li>
-        <li>Aider le cabinet à répondre aux demandes d'exercice de droits des patients</li>
+        <li>Aider le praticien à répondre aux demandes d'exercice de droits de ses clients</li>
         <li>Supprimer ou restituer toutes les données à l'issue du contrat</li>
         <li>Mettre à disposition toute information nécessaire pour démontrer le respect des obligations RGPD</li>
       </ul>
       <p>Un <strong>accord de sous-traitance (DPA)</strong> est systématiquement signé avec chaque cabinet client au moment de l'onboarding. Ce document formalise les obligations réciproques et est conservé pendant toute la durée de la relation contractuelle.</p>
-      <p>Les données patients transitant via Make.com (opéré sur le compte de PraticIA) sont traitées exclusivement à des fins d'automatisation des communications patient définies par le cabinet, et ne sont jamais utilisées à d'autres fins.</p>
+      <p>Les données transitant via Make.com (opéré sur le compte de PraticIA) sont traitées exclusivement à des fins d'automatisation des communications définies par le praticien, et ne sont jamais utilisées à d'autres fins.</p>
     </div>
 
     <div class="legal-card">
